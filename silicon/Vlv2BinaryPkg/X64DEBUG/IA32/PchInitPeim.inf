@@ -1,0 +1,84 @@
+#
+# This file contains a 'Sample Driver' and is licensed as such
+# under the terms of your license agreement with Intel or your
+# vendor.  This file may be modified by the user, subject to
+# the additional terms of the license agreement
+#
+#/*++
+#
+#  Copyright (c) 2012 - 2016 Intel Corporation. All rights reserved
+#  This software and associated documentation (if any) is furnished
+#  under a license and may only be used or copied in accordance
+#  with the terms of the license. Except as permitted by such
+#  license, no part of this software or documentation may be
+#  reproduced, stored in a retrieval system, or transmitted in any
+#  form or by any means without the express written consent of
+#  Intel Corporation.
+#
+#  Module Name:
+#
+#    PchInitPeim.inf
+#
+#  Abstract:
+#
+#    Component description file for the PCH Init PEIM.
+#
+#--*/
+
+# DO NOT EDIT
+# FILE auto-generated
+
+[Defines]
+  INF_VERSION                = 0x00010017
+  BASE_NAME                  = PchInitPeim
+  FILE_GUID                  = FD236AE7-0791-48c4-B29E-29BDEEE1A838
+  MODULE_TYPE                = PEIM
+  VERSION_STRING             = 1.0
+  ENTRY_POINT                = InstallPchInitPpi
+
+[Packages.IA32]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  Vlv2DeviceRefCodePkg/Vlv2DeviceRefCodePkg.dec
+  Vlv2TbltDevicePkg/PlatformPkg.dec
+
+[Binaries.IA32]
+  PE32|PchInitPeim.efi
+  PEI_DEPEX|PchInitPeim.depex
+  DISPOSABLE|PchInitPeim.pdb
+
+[PatchPcd.IA32]
+  ## CONSUMES
+  gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseAddress|0x00000000e0000000|0x5370
+
+  ## CONSUMES
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x803805c6|0x5378
+
+
+[PcdEx.IA32]
+
+[LibraryClasses.IA32]
+## @LIB_INSTANCES
+#  MdeModulePkg/Library/OemHookStatusCodeLibNull/OemHookStatusCodeLibNull.inf
+#  MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
+#  MdeModulePkg/Library/PeiReportStatusCodeLib/PeiReportStatusCodeLib.inf
+#  MdePkg/Library/BaseLib/BaseLib.inf
+#  MdePkg/Library/PeiMemoryAllocationLib/PeiMemoryAllocationLib.inf
+#  MdePkg/Library/PeiServicesTablePointerLibIdt/PeiServicesTablePointerLibIdt.inf
+#  MdePkg/Library/PeiServicesLib/PeiServicesLib.inf
+#  MdePkg/Library/BaseMemoryLibRepStr/BaseMemoryLibRepStr.inf
+#  MdePkg/Library/PeiHobLib/PeiHobLib.inf
+#  MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
+#  IntelFrameworkModulePkg/Library/PeiDxeDebugLibReportStatusCode/PeiDxeDebugLibReportStatusCode.inf
+#  MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf
+#  MdePkg/Library/BasePciCf8Lib/BasePciCf8Lib.inf
+#  MdePkg/Library/BasePciLibCf8/BasePciLibCf8.inf
+#  MdePkg/Library/PeimEntryPoint/PeimEntryPoint.inf
+#  Vlv2DeviceRefCodePkg/ValleyView2Soc/SouthCluster/Library/PchPlatformLib/PchPlatformLib.inf
+
+[Depex.IA32]
+#  gPchPlatformPolicyPpiGuid
+
+
+
+[BuildOptions.IA32]

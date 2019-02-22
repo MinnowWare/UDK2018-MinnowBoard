@@ -1,0 +1,84 @@
+#
+# This file contains a 'Sample Driver' and is licensed as such
+# under the terms of your license agreement with Intel or your
+# vendor.  This file may be modified by the user, subject to
+# the additional terms of the license agreement
+#
+#/*++
+#
+# Copyright (c) 2012 - 2013 Intel Corporation. All rights reserved
+# This software and associated documentation (if any) is furnished
+# under a license and may only be used or copied in accordance
+# with the terms of the license. Except as permitted by such
+# license, no part of this software or documentation may be
+# reproduced, stored in a retrieval system, or transmitted in any
+# form or by any means without the express written consent of
+# Intel Corporation.
+#
+#  Module Name:
+#
+#    PchSmiDispatcher.inf
+#
+#  Abstract:
+#
+#    Component description file for the Pch SMI Dispatch Handlers module
+#
+#--*/
+
+# DO NOT EDIT
+# FILE auto-generated
+
+[Defines]
+  INF_VERSION                = 0x00010017
+  BASE_NAME                  = PchSmiDispatcher
+  FILE_GUID                  = 6BE18C9C-BF61-499e-88EC-5CD57430460C
+  MODULE_TYPE                = DXE_SMM_DRIVER
+  VERSION_STRING             = 1.0
+  PI_SPECIFICATION_VERSION   = 0x0001000A
+  ENTRY_POINT                = InitializePchSmmDispatcher
+
+[Packages.X64]
+  MdePkg/MdePkg.dec
+  IntelFrameworkPkg/IntelFrameworkPkg.dec
+  Vlv2DeviceRefCodePkg/Vlv2DeviceRefCodePkg.dec
+
+[Binaries.X64]
+  PE32|PchSmiDispatcher.efi
+  SMM_DEPEX|PchSmiDispatcher.depex
+  DISPOSABLE|PchSmiDispatcher.pdb
+
+[PatchPcd.X64]
+  gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseAddress|0x00000000e0000000|0xB020
+
+  ## CONSUMES
+  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x803805c6|0xB028
+
+
+[PcdEx.X64]
+
+[LibraryClasses.X64]
+## @LIB_INSTANCES
+#  MdePkg/Library/BaseMemoryLibRepStr/BaseMemoryLibRepStr.inf
+#  MdePkg/Library/BaseLib/BaseLib.inf
+#  MdePkg/Library/DxePcdLib/DxePcdLib.inf
+#  MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf
+#  MdePkg/Library/BasePciCf8Lib/BasePciCf8Lib.inf
+#  MdeModulePkg/Library/BasePlatformHookLibNull/BasePlatformHookLibNull.inf
+#  MdePkg/Library/BasePciLibCf8/BasePciLibCf8.inf
+#  MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
+#  MdeModulePkg/Library/BaseSerialPortLib16550/BaseSerialPortLib16550.inf
+#  MdePkg/Library/BasePrintLib/BasePrintLib.inf
+#  MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#  MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+#  MdePkg/Library/SmmServicesTableLib/SmmServicesTableLib.inf
+#  MdePkg/Library/SmmMemoryAllocationLib/SmmMemoryAllocationLib.inf
+#  MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf
+#  Vlv2DeviceRefCodePkg/ValleyView2Soc/SouthCluster/Library/PchPlatformLib/PchPlatformLib.inf
+#  MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf
+
+[Depex.X64]
+#  (gEfiSmmBase2ProtocolGuid AND gEfiPciRootBridgeIoProtocolGuid) AND (gEfiPcdProtocolGuid) AND (gEfiPcdProtocolGuid) AND (gEfiPcdProtocolGuid) AND (gEfiPcdProtocolGuid) AND (gEfiSmmBase2ProtocolGuid) AND (gEfiSmmAccess2ProtocolGuid) AND (gEfiBdsArchProtocolGuid AND gEfiCpuArchProtocolGuid AND gEfiMetronomeArchProtocolGuid AND gEfiMonotonicCounterArchProtocolGuid AND gEfiRealTimeClockArchProtocolGuid AND gEfiResetArchProtocolGuid AND gEfiRuntimeArchProtocolGuid AND gEfiSecurityArchProtocolGuid AND gEfiTimerArchProtocolGuid AND gEfiVariableWriteArchProtocolGuid AND gEfiVariableArchProtocolGuid AND gEfiWatchdogTimerArchProtocolGuid)
+
+
+
+[BuildOptions.X64]

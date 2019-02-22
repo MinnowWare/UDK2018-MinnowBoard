@@ -1,2 +1,13 @@
-# UDK2018-MinnowBoard
-Get the MinnowBoard running with UDK2018
+# UDK2018-Minnowboard
+
+## Goal
+Get the MinnowBoard running with UDK2018.
+
+NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
+
+## Revision History
+
+### 20190222 - initial checkin
+* downloaded the entire source code (see HowTo)
+* configured as a VS2017 solution - just for editing the source
+* not able to build

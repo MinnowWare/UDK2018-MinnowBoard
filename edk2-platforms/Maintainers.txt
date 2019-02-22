@@ -1,0 +1,10 @@
+MINNOWBOARD MAX/TURBOT PLATFORM Maintainers
+==================
+
+Vlv2DeviceRefCodePkg
+M: Zailiang Sun <zailiang.sun@intel.com>
+M: Yi Qian <yi.qian@intel.com>
+
+Vlv2TbltDevicePkg
+M: Zailiang Sun <zailiang.sun@intel.com>
+M: Yi Qian <yi.qian@intel.com>

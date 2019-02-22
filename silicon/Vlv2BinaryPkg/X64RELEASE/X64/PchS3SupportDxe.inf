@@ -1,0 +1,89 @@
+#
+# This file contains an 'Intel Peripheral Driver' and is
+# licensed for Intel CPUs and chipsets under the terms of your
+# license agreement with Intel or your vendor.  This file may
+# be modified by the user, subject to additional terms of the
+# license agreement
+#
+## @file
+#  Component description file for Pch Initialization driver
+#
+#  Copyright (c) 1999 - 2011, Intel Corporation. All rights reserved.<BR>
+#  This software and associated documentation (if any) is furnished
+#  under a license and may only be used or copied in accordance
+#  with the terms of the license. Except as permitted by such
+#  license, no part of this software or documentation may be
+#  reproduced, stored in a retrieval system, or transmitted in any
+#  form or by any means without the express written consent of
+#  Intel Corporation.
+#
+##
+
+# DO NOT EDIT
+# FILE auto-generated
+
+[Defines]
+  INF_VERSION                = 0x00010017
+  BASE_NAME                  = PchS3SupportDxe
+  FILE_GUID                  = 14537da0-222a-4bbe-9a5c-212a3cbca9ef
+  MODULE_TYPE                = DXE_DRIVER
+  VERSION_STRING             = 1.0
+  ENTRY_POINT                = PchS3SupportEntryPoint
+
+[Packages.X64]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  Vlv2DeviceRefCodePkg/Vlv2DeviceRefCodePkg.dec
+
+[Binaries.X64]
+  PE32|PchS3SupportDxe.efi
+  DXE_DEPEX|PchS3SupportDxe.depex
+
+[PatchPcd.X64]
+  gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseAddress|0x00000000e0000000|0x39C0
+
+
+[PcdEx.X64]
+  ## CONSUMES
+  ## SOMETIMES_PRODUCES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdS3BootScriptTablePrivateDataPtr
+
+  ## CONSUMES
+  ## SOMETIMES_PRODUCES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdS3BootScriptTablePrivateSmmDataPtr
+
+
+[LibraryClasses.X64]
+## @LIB_INSTANCES
+#  MdePkg/Library/BaseMemoryLibRepStr/BaseMemoryLibRepStr.inf
+#  MdePkg/Library/DxePcdLib/DxePcdLib.inf
+#  MdePkg/Library/BaseLib/BaseLib.inf
+#  MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+#  MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+#  MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf
+#  MdePkg/Library/BasePrintLib/BasePrintLib.inf
+#  MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
+#  MdePkg/Library/BasePciCf8Lib/BasePciCf8Lib.inf
+#  MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
+#  MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf
+#  MdePkg/Library/BasePciLibCf8/BasePciLibCf8.inf
+#  MdePkg/Library/UefiLib/UefiLib.inf
+#  SourceLevelDebugPkg/Library/PeCoffExtraActionLibDebug/PeCoffExtraActionLibDebug.inf
+#  MdeModulePkg/Library/SmmLockBoxLib/SmmLockBoxDxeLib.inf
+#  MdePkg/Library/BasePciSegmentLibPci/BasePciSegmentLibPci.inf
+#  Vlv2TbltDevicePkg/Library/SmbusLib/SmbusLib.inf
+#  Vlv2TbltDevicePkg/Library/IntelPchAcpiTimerLib/IntelPchAcpiTimerLib.inf
+#  Vlv2DeviceRefCodePkg/ValleyView2Soc/SouthCluster/Library/PchPlatformLib/PchPlatformLib.inf
+#  MdePkg/Library/DxeServicesLib/DxeServicesLib.inf
+#  MdePkg/Library/BasePeCoffLib/BasePeCoffLib.inf
+#  MdeModulePkg/Library/PiDxeS3BootScriptLib/DxeS3BootScriptLib.inf
+#  MdePkg/Library/BaseCacheMaintenanceLib/BaseCacheMaintenanceLib.inf
+#  Vlv2DeviceRefCodePkg/ValleyView2Soc/SouthCluster/Library/PchPciExpressHelpersLib/PchPciExpressHelpersLib.inf
+#  MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf
+
+[Depex.X64]
+#  (TRUE) AND (gEfiPcdProtocolGuid) AND (gEfiPcdProtocolGuid) AND (gEfiPcdProtocolGuid) AND (gEfiPcdProtocolGuid) AND (gEfiBdsArchProtocolGuid AND gEfiCpuArchProtocolGuid AND gEfiMetronomeArchProtocolGuid AND gEfiMonotonicCounterArchProtocolGuid AND gEfiRealTimeClockArchProtocolGuid AND gEfiResetArchProtocolGuid AND gEfiRuntimeArchProtocolGuid AND gEfiSecurityArchProtocolGuid AND gEfiTimerArchProtocolGuid AND gEfiVariableWriteArchProtocolGuid AND gEfiVariableArchProtocolGuid AND gEfiWatchdogTimerArchProtocolGuid)
+
+
+
+[BuildOptions.X64]

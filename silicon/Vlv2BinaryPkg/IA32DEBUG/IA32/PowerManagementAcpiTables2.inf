@@ -1,0 +1,65 @@
+#/*++
+#  This file contains an 'Intel Peripheral Driver' and uniquely
+#  identified as "Intel Reference Module" and is
+#  licensed for Intel CPUs and chipsets under the terms of your
+#  license agreement with Intel or your vendor.  This file may
+#  be modified by the user, subject to additional terms of the
+#  license agreement
+#--*/
+#
+#/*++
+#
+#Copyright (c)  1999 - 2010 Intel Corporation. All rights reserved
+#This software and associated documentation (if any) is furnished
+#under a license and may only be used or copied in accordance
+#with the terms of the license. Except as permitted by such
+#license, no part of this software or documentation may be
+#reproduced, stored in a retrieval system, or transmitted in any
+#form or by any means without the express written consent of
+#Intel Corporation.
+#
+#Module Name:
+#
+#  PowerManagementAcpiTables.inf
+#
+#Abstract:
+#
+#  Component description file for the ACPI tables
+#
+#--*/
+
+# DO NOT EDIT
+# FILE auto-generated
+
+[Defines]
+  INF_VERSION                = 0x00010017
+  BASE_NAME                  = PowerManagementAcpiTables2
+  FILE_GUID                  = 161BE597-E9C5-49DB-AE50-C462AB54EEDA
+  MODULE_TYPE                = USER_DEFINED
+  VERSION_STRING             = 1.0
+  UEFI_SPECIFICATION_VERSION = 0x00020000
+
+[Packages.IA32]
+
+[Binaries.IA32]
+  ASL|Ssdt/Cpu0Ist.aml
+  ASL|Ssdt/Cpu0Tst.aml
+  ASL|Ssdt/CpuPm.aml
+  ASL|Ssdt/ApTst.aml
+  ASL|Ssdt/ApCst.aml
+  ASL|Ssdt/Cpu0Cst.aml
+  ASL|Ssdt/ApIst.aml
+
+[PatchPcd.IA32]
+
+[PcdEx.IA32]
+
+[LibraryClasses.IA32]
+## @LIB_INSTANCES
+
+[Depex.IA32]
+
+
+
+
+[BuildOptions.IA32]

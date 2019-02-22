@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDK2018-Minnowboard", "UDK2018-Minnowboard.vcxproj", "{3C51C6B1-F7A8-4A6B-9401-9898339AD9C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		only edit|x64 = only edit|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C51C6B1-F7A8-4A6B-9401-9898339AD9C4}.only edit|x64.ActiveCfg = dont build|only edit
+		{3C51C6B1-F7A8-4A6B-9401-9898339AD9C4}.only edit|x64.Build.0 = dont build|only edit
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7759A0BB-41CA-4A09-A8F3-0853370E874E}
+	EndGlobalSection
+EndGlobal

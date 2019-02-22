@@ -1,0 +1,92 @@
+#
+# This file contains an 'Intel Pre-EFI Module' and is licensed
+# for Intel CPUs and Chipsets under the terms of your license
+# agreement with Intel or your vendor.  This file may be
+# modified by the user, subject to additional terms of the
+# license agreement
+#
+## @file
+#  SecCore module that implements the SEC phase.
+#  NOTE: This module was replaced by UefiCpuPkg/SecCore/SecCore.inf
+#
+#  This is the first module taking control of the platform upon power-on/reset.
+#  It implements the first phase of the security phase. The entry point function is
+#  _ModuleEntryPoint in PlatformSecLib. The entry point function will switch to
+#  protected mode, setup flat memory model, enable temporary memory and
+#  call into SecStartup().
+#
+# Copyright (c) 2006 - 2016, Intel Corporation. All rights reserved.<BR>
+#
+#  This software and associated documentation (if any) is furnished
+#  under a license and may only be used or copied in accordance
+#  with the terms of the license. Except as permitted by such
+#  license, no part of this software or documentation may be
+#  reproduced, stored in a retrieval system, or transmitted in any
+#  form or by any means without the express written consent of
+#  Intel Corporation.
+#
+#
+##
+
+# DO NOT EDIT
+# FILE auto-generated
+
+[Defines]
+  INF_VERSION                = 0x00010017
+  BASE_NAME                  = SecCore
+  FILE_GUID                  = 1BA0062E-C779-4582-8566-336AE8F78F09
+  MODULE_TYPE                = SEC
+  VERSION_STRING             = 1.0
+  MODULE_UNI_FILE            = SecCore.uni
+
+[Packages.IA32]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[Binaries.IA32]
+  BIN|ResetVec.bin
+  PE32|SecCore.efi
+  DISPOSABLE|SecCore.pdb
+
+[PatchPcd.IA32]
+  gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseAddress|0x00000000e0000000|0x21A8
+
+
+[PcdEx.IA32]
+
+[LibraryClasses.IA32]
+## @LIB_INSTANCES
+#  UefiCpuPkg/Library/BaseUefiCpuLib/BaseUefiCpuLib.inf
+#  MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
+#  MdePkg/Library/BaseLib/BaseLib.inf
+#  MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+#  MdePkg/Library/BaseMemoryLibRepStr/BaseMemoryLibRepStr.inf
+#  MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf
+#  MdePkg/Library/BasePciCf8Lib/BasePciCf8Lib.inf
+#  MdePkg/Library/BasePciLibCf8/BasePciLibCf8.inf
+#  Vlv2TbltDevicePkg/Library/PlatformHookSerialLib/PlatformHookSerialInitLib.inf
+#  Vlv2TbltDevicePkg/Library/PlatformCmosLib/PlatformCmosLib.inf
+#  Vlv2TbltDevicePkg/Library/IntelPchAcpiTimerLib/IntelPchAcpiTimerLib.inf
+#  MdeModulePkg/Library/BaseSerialPortLib16550/BaseSerialPortLib16550.inf
+#  DeviceCommonPkg/Library/CmosAccessLib/CmosAccessLib.inf
+#  UefiCpuPkg/Library/BaseXApicX2ApicLib/BaseXApicX2ApicLib.inf
+#  MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf
+#  MdeModulePkg/Library/OemHookStatusCodeLibNull/OemHookStatusCodeLibNull.inf
+#  MdePkg/Library/PeiServicesTablePointerLibIdt/PeiServicesTablePointerLibIdt.inf
+#  Vlv2TbltDevicePkg/Library/PlatformSecLib/PlatformSecLib.inf
+#  MdeModulePkg/Library/DebugAgentLibNull/DebugAgentLibNull.inf
+#  MdePkg/Library/BasePeCoffGetEntryPointLib/BasePeCoffGetEntryPointLib.inf
+#  SourceLevelDebugPkg/Library/PeCoffExtraActionLibDebug/PeCoffExtraActionLibDebug.inf
+#  MdeModulePkg/Library/CpuExceptionHandlerLibNull/CpuExceptionHandlerLibNull.inf
+#  MdeModulePkg/Library/PeiReportStatusCodeLib/PeiReportStatusCodeLib.inf
+
+[Depex.IA32]
+
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF EBC
+#
+
+[BuildOptions.IA32]
