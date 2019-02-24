@@ -137,6 +137,11 @@
 !endif
   PciSegmentLib|MdePkg/Library/BasePciSegmentLibPci/BasePciSegmentLibPci.inf
   FileExplorerLib|MdeModulePkg/Library/FileExplorerLib/FileExplorerLib.inf
+#MWDebug start
+  BmpSupportLib|MdeModulePkg\Library\BaseBmpSupportLib\BaseBmpSupportLib.inf
+  DisplayUpdateProgressLib|MdeModulePkg\Library\DisplayUpdateProgressLibText\DisplayUpdateProgressLibText.inf
+  SafeIntLib|MdePkg\Library\BaseSafeIntLib\BaseSafeIntLib.inf
+#MWDebug end
   #
   # UEFI & PI
   #
@@ -741,8 +746,8 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdSystemRebootAfterCapsuleProcessFlag|0x0001
 
 [PcdsFixedAtBuild.IA32.PEIM, PcdsFixedAtBuild.IA32.PEI_CORE, PcdsFixedAtBuild.IA32.SEC]
 !if $(TARGET) == RELEASE
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x0
-  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x3
+#MWDebug  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x0
+#MWDebug  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x3
 !else
   gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x2E
   gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x07
@@ -1339,13 +1344,13 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
 
   IntelFrameworkModulePkg/Universal/LegacyRegionDxe/LegacyRegionDxe.inf
   
-  PerformancePkg/Dp_App/Dp.inf {
-  <LibraryClasses>
-  !if $(PERFORMANCE_ENABLE) == TRUE
-    PerformanceLib|MdeModulePkg/Library/DxePerformanceLib/DxePerformanceLib.inf
-    TimerLib|$(PLATFORM_PACKAGE)/Library/IntelPchAcpiTimerLib/IntelPchAcpiTimerLib.inf
-  !endif
-  }
+#MWDebug  PerformancePkg/Dp_App/Dp.inf {
+#MWDebug  <LibraryClasses>
+#MWDebug  !if $(PERFORMANCE_ENABLE) == TRUE
+#MWDebug    PerformanceLib|MdeModulePkg/Library/DxePerformanceLib/DxePerformanceLib.inf
+#MWDebug    TimerLib|$(PLATFORM_PACKAGE)/Library/IntelPchAcpiTimerLib/IntelPchAcpiTimerLib.inf
+#MWDebug  !endif
+#MWDebug  }
 
   Vlv2TbltDevicePkg/VlvPlatformInitDxe/VlvPlatformInitDxe.inf{
     <LibraryClasses>

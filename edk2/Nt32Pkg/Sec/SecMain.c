@@ -203,6 +203,37 @@ Returns:
   FirmwareVolumesStr = (CHAR16 *) PcdGetPtr (PcdWinNtFirmwareVolume);
 
   SecPrint ("\nEDK II SEC Main NT Emulation Environment from www.TianoCore.org\n");
+//MWDebug start
+    if(1){
+        int i;
+
+        SecPrint ("#############################################################################################\n");
+        SecPrint ("add \"/debug\" command line switch, to connect to the debugger at the very beginning of POST\n");
+        SecPrint ("#############################################################################################\n");
+
+        if(Argc > 1){
+            for(i = 1 ; i < Argc ; i++){
+                if(0 == strcmp("/debug", Argv[i])){
+					//SecPrint("IF YOU WANT TO DEBUG from the very beginning of the EMULATION:\n\t1. start the TASKMGR\n\t2. connect SecMain.exe to the debugger\n\t3. and press ENTER in this command box\nOR\n");
+					SecPrint("\t1. start Visual Studio\n");
+					SecPrint("\t2. DEBUG->ATTACH TO PROCESS (CTRL + ALT + P) --> SecMain.exe\n");
+					SecPrint("\t3. Break All  (CTRL + ALT + Break) --> SecMain.exe\n");
+					SecPrint("\t4. SET A SOFTWARE BREAKPOINT (F9) in line 230\n");
+					SecPrint("\t5. and press ENTER in this command box\n");
+					SecPrint("\t6. go back to Visual Studio an RUN/SINGLE STEP the application\n");
+					SecPrint("\t7. otherwise press enter to continue...\n");
+					getchar();
+					//
+					// 1. SET A SOFTWARE BREAKPOINT TO THE NEXT LINE of code below -->> SecPrint("");
+					// 2. switch to the command box and press ENTER
+					// 3. start single stepping the entire boot/emulation process, good luck...
+					//
+					SecPrint("");//now you can single step the entire boot/emulation process, good luck...
+				}
+            }
+        }
+    }
+//MWDebug end
 
   //
   // Determine the first thread available to this process.

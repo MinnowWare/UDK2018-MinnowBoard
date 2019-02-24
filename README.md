@@ -7,6 +7,10 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 ## Revision History
 
+### 20190224
+* added missing files from UDK2017 to build MinnowBoard wot UDK2017
+* fixed: build MinnowBoard
+
 ### 20190222 - initial checkin
 * downloaded the entire source code (see HowTo)
 * configured as a VS2017 solution - just for editing the source

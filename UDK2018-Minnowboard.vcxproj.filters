@@ -12447,6 +12447,30 @@
     <ClInclude Include="edk2\AppPkg\Applications\Python\Python-2.7.10\Modules\zlib\zutil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="edk2\PerformancePkg\Library\TscTimerLib\TscTimerLibInternal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\PerformancePkg\Include\PerformanceTokens.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\PerformancePkg\Include\Guid\TscFrequency.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\PerformancePkg\Include\Guid\PerformancePkgTokenSpace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\PerformancePkg\Include\Ich\GenericIch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\SecurityPkg\Include\Library\TrEEPpVendorLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\SecurityPkg\Include\Guid\TrEEPhysicalPresenceData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\SecurityPkg\Include\Library\TrEEPhysicalPresenceLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="edk2-platforms\Vlv2TbltDevicePkg\AcpiPlatform\AcpiPlatform.c">
@@ -12993,6 +13017,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="edk2-platforms\Vlv2TbltDevicePkg\AcpiPlatform\AcpiPlatformHooks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\PerformancePkg\Library\TscTimerLib\BaseTscTimerLib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\PerformancePkg\Library\TscTimerLib\DxeTscTimerLib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\PerformancePkg\Library\TscTimerLib\PeiTscTimerLib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\PerformancePkg\Library\TscTimerLib\TscTimerLibShare.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -20516,6 +20552,198 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="edk2\StdLib\StdLib.dsc">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\UPT.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\get_vsvars.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\set_vsprefix_envs.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\toolsetup.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Source\C\BrotliCompress\BrotliCompress.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\build.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\build-amd64.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\buildmsi.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\clean.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\clean-amd64.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\external.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\external-amd64.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\external-common.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\test.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\buildbot\test-amd64.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Conf\BiosId.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\DuetPkg\CreateBootDisk.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\DuetPkg\PostBuild.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\edksetup.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\launchVS2017.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2-BaseTools-win32\BrotliCompress.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2-BaseTools-win32\ImportTool.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2-BaseTools-win32\LzmaF86Compress.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\Feature\Capsule\GenerateCapsule\GenCapsuleAll.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\Feature\Capsule\GenerateCapsule\GenCapsuleMinnowMax.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\Feature\Capsule\GenerateCapsule\GenCapsuleMinnowMaxRelease.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\Feature\Capsule\GenerateCapsule\GenCapsuleSampleColor.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Source\C\VfrCompile\Pccts\h\pcnames.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\EdkCompatibilityPkg\Other\Maintained\Tools\Pccts\h\pcnames.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Source\C\LzmaCompress\LzmaF86Compress.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Source\C\Makefiles\NmakeSubdirs.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.10\libprep.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.10\srcprep.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Scripts\SetVisualStudio.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Scripts\ShowEnvironment.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\Stitch\IFWIStitch.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\Stitch\IFWIStitch.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\AppPkg\Applications\Python\Python-2.7.2\Tools\unicode\genwincodecs.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\bld_vlv.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\bldX64.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\Vlv2TbltDevicePkg\Build_IFWI.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\bld_vlv.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\bldX64.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\Build_IFWI.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Bin\Win32\BrotliCompress.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\Bin\Win32\LzmaF86Compress.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\BPDG.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\build.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\Ecc.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\GenDepex.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\GenerateCapsule.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\GenFds.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\GenPatchPcdTable.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\PatchPcdValue.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\Pkcs7Sign.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\Rsa2048Sha256GenerateKeys.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\Rsa2048Sha256Sign.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\TargetTool.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\BaseTools\BinWrappers\WindowsLike\Trim.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\PerformancePkg\PerformancePkg.dsc">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\PerformancePkg\PerformancePkg.dec">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\PerformancePkg\Library\TscTimerLib\PeiTscTimerLib.inf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\PerformancePkg\Library\TscTimerLib\BaseTscTimerLib.inf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\PerformancePkg\Library\TscTimerLib\DxeTscTimerLib.inf">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

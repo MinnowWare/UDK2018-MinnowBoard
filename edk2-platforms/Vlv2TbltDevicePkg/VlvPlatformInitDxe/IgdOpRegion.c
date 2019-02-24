@@ -932,3 +932,12 @@ IgdOpRegionInit (
   //
   return EFI_SUCCESS;
 }
+//MWDebug start
+void* memset( void* p, char c, size_t s ) {
+	char *pc = p;
+
+	while ( s-- )
+		*pc++ = c;
+	return p;
+}
+//MWDebug end

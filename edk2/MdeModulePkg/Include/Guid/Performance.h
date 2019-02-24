@@ -50,7 +50,32 @@ typedef struct {
   UINT32                Reserved;
 } PEI_PERFORMANCE_LOG_HEADER;
 
+//MWDebug start
+//
+// The data structure for performance data in ACPI memory.
+//
+#define PERFORMANCE_SIGNATURE   SIGNATURE_32 ('P', 'e', 'r', 'f')
+#define PERF_TOKEN_SIZE         28
+#define PERF_TOKEN_LENGTH       (PERF_TOKEN_SIZE - 1)
+#define PERF_PEI_ENTRY_MAX_NUM  50
+#define PERF_DATA_MAX_LENGTH    0x4000
 
+typedef struct {
+  CHAR8   Token[PERF_TOKEN_SIZE];
+  UINT32  Duration;
+} PERF_DATA;
+
+typedef struct {
+  UINT64        BootToOs;
+  UINT64        S3Resume;
+  UINT32        S3EntryNum;
+  PERF_DATA     S3Entry[PERF_PEI_ENTRY_MAX_NUM];
+  UINT64        CpuFreq;
+  UINT64        BDSRaw;
+  UINT32        Count;
+  UINT32        Signiture;
+} PERF_HEADER;
+//MWDebug end
 #define PERFORMANCE_PROTOCOL_GUID \
   { 0x76b6bdfa, 0x2acd, 0x4462, { 0x9E, 0x3F, 0xcb, 0x58, 0xC9, 0x69, 0xd9, 0x37 } }
 
