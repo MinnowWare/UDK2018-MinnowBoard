@@ -9,6 +9,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 ## HowTo
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC
 2. get the GIT repository WebURL
+
   ![cloneimage](cloneaddr.png)
 3. in the file explorer open the builddrive
 4. right click to open the context menu -> Git clone
