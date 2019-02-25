@@ -11,15 +11,22 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 2. get the GIT repository WebURL
 
   ![cloneimage](cloneaddr.png)
+  
 3. in the file explorer open the builddrive
+
 4. right click to open the context menu -> Git clone
+
   ![cloneimage2](clonedest.png)
+
 5. download the repository
+
 6. run startBldEnv.bat
+
 7. To build the EDK emulation:
        "BUILD -t VS2017" to build the EDK2
        "rd /s /q build" to clean previous build
        "start DBG" to start the UEFI BIOS EMULATION
+
 8. To build the MinnowBoard:
 		cd ..\edk2-platforms\Vlv2TbltDevicePkg
 		Build_IFWI.bat MNW2 Release
