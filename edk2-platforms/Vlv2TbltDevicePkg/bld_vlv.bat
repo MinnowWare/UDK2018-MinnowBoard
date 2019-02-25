@@ -136,6 +136,7 @@ if /i "%~2" == "RELEASE" (
 ::**********************************************************************
 echo.
 echo Setting the Build environment for VS2015/VS2013/VS2012/VS2010/VS2008...
+rem MWDebug start
 if defined VS150COMNTOOLS (
   if not defined VSINSTALLDIR call "%VS150COMNTOOLS%\vsvars32.bat"
   if /I "%VS150COMNTOOLS%" == "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\" (
@@ -143,6 +144,7 @@ if defined VS150COMNTOOLS (
 	echo TOOL_CHAIN_TAG=%TOOL_CHAIN_TAG%
 	rem pause
 	)
+rem MWDebug end
 ) else if defined VS140COMNTOOLS (
   if not defined VSINSTALLDIR call "%VS140COMNTOOLS%\vsvars32.bat"
   if /I "%VS140COMNTOOLS%" == "C:\Program Files\Microsoft Visual Studio 14.0\Common7\Tools\" (

@@ -4622,6 +4622,7 @@
     <None Include="edk2\CryptoPkg\Library\OpensslLib\OpensslLibCrypto.uni" />
     <None Include="edk2\CryptoPkg\Library\TlsLib\TlsLib.inf" />
     <None Include="edk2\CryptoPkg\Library\TlsLib\TlsLib.uni" />
+    <None Include="edk2\dbg.bat" />
     <None Include="edk2\DuetPkg\AcpiResetDxe\Reset.inf" />
     <None Include="edk2\DuetPkg\BiosVideoThunkDxe\BiosVideo.inf" />
     <None Include="edk2\DuetPkg\BootSector\BootSector.inf" />
@@ -6958,6 +6959,7 @@
     <None Include="silicon\Vlv2BinaryPkg\X64RELEASE\X64\Tpm2DeviceSeCDxe.inf" />
     <None Include="silicon\Vlv2BinaryPkg\X64RELEASE\X64\VlvInitDxe.inf" />
     <None Include="silicon\Vlv2MiscBinariesPkg\Microcode\MicrocodeUpdates.inf" />
+    <None Include="startBldEnv.bat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

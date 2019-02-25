@@ -20746,5 +20746,11 @@
     <None Include="edk2\PerformancePkg\Library\TscTimerLib\DxeTscTimerLib.inf">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="startBldEnv.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="edk2\dbg.bat">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

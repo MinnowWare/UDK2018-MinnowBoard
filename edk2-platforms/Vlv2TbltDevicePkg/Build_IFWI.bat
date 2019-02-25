@@ -116,7 +116,7 @@ if "%Platform_Type%" == "BYTC" (
 if %ERRORLEVEL% NEQ 0 (
     echo echo  -- Error Building BIOS  & echo.
     set exitCode=1
-    goto exit
+    rem MWDebug goto  exit
 )
 echo.
 echo Finished Building BIOS.
