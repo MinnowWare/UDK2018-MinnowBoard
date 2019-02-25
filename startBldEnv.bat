@@ -1,6 +1,7 @@
 set path=%path%;"c:\NASM"
 set PYTHON_HOME=C:\Python27
 cd edk2
+if exist conf rd /s /q Conf
 call edksetup.bat Rebuild
 call edksetup --nt32
 call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
