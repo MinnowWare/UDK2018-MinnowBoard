@@ -117,6 +117,8 @@
   #
   # Basic
   #
+  #MWDebug
+  CdeLib|CdePkg/CdeLib/CdeLib.inf
   BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
 !if $(SSE2_ENABLE) == TRUE
   BaseMemoryLib|MdePkg/Library/BaseMemoryLibSse2/BaseMemoryLibSse2.inf
@@ -330,7 +332,16 @@
 !if $(PERFORMANCE_ENABLE) == TRUE
   PerformanceLib|MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf
 !endif
+#MWDebug DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+#MWDebug - start
+!if $(TARGET) == RELEASE
   DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+!else
+  DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
+!endif
+#MWDebug - end
   PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
 
 [LibraryClasses.IA32.PEIM, LibraryClasses.IA32.PEI_CORE, LibraryClasses.IA32.SEC]
@@ -415,7 +426,16 @@
   HashLib|SecurityPkg/Library/HashLibBaseCryptoRouter/HashLibBaseCryptoRouterDxe.inf
 
 [LibraryClasses.X64.DXE_DRIVER]
+#MWDebug  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+#MWDebug - start
+!if $(TARGET) == RELEASE
   DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+!else
+  DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
+!endif
+#MWDebug - end
   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
   PerformanceLib|MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf
   CustomizedDisplayLib|MdeModulePkg/Library/CustomizedDisplayLib/CustomizedDisplayLib.inf
@@ -451,9 +471,18 @@
   SmmCpuPlatformHookLib|UefiCpuPkg/Library/SmmCpuPlatformHookLibNull/SmmCpuPlatformHookLibNull.inf
 
   BaseCryptLib|CryptoPkg/Library/BaseCryptLib/SmmCryptLib.inf
-  !if $(TARGET) != RELEASE
+#MWDebug  !if $(TARGET) != RELEASE
+#MWDebug  DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#MWDebug  !endif
+#MWDebug - start
+!if $(TARGET) == RELEASE
+  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+!else
   DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
   !endif
+#MWDebug - end
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/SmmDebugAgentLib.inf
@@ -474,9 +503,18 @@
 
   PerformanceLib|MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf
 
-!if $(TARGET) != RELEASE
+#MWDebug !if $(TARGET) != RELEASE
+#MWDebug       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#MWDebug !endif
+#MWDebug - start
+!if $(TARGET) == RELEASE
+  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+!else
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
 !endif
+#MWDebug - end
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/DxeDebugAgentLib.inf
@@ -749,8 +787,8 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdSystemRebootAfterCapsuleProcessFlag|0x0001
 #MWDebug  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x0
 #MWDebug  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x3
 !else
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x2E
-  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x07
+#MWDebug  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x2E
+#MWDebug  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x07
 !endif
 
 [PcdsPatchableInModule.common]
@@ -973,14 +1011,32 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdSystemRebootAfterCapsuleProcessFlag|0x0001
     !if $(TARGET) == DEBUG
 
     <LibraryClasses>
+#MWDebug      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+		#MWDebug - start
+		!if $(TARGET) == RELEASE
+		  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+		  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+		!else
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+		  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
     !endif
+		#MWDebug - end    !endif
+	!endif
   }
   Vlv2TbltDevicePkg/FspSupport/BootModePei/BootModePei.inf
   IntelFspWrapperPkg/FspInitPei/FspInitPei.inf {
     !if $(TARGET) == DEBUG
     <LibraryClasses>
+#MWDebug      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+		#MWDebug - start
+		!if $(TARGET) == RELEASE
+		  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+		  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+		!else
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+		  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
+		!endif
+		#MWDebug - end    
     !endif
   }
   !endif
@@ -1059,7 +1115,16 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
       gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x803805c6
     <LibraryClasses>
 !if $(TARGET) != RELEASE
+#MWDebug      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+	#MWDebug - start
+	!if $(TARGET) == RELEASE
+	  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+	  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+	!else
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+	  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
+	!endif
+	#MWDebug - end
 !endif
       PcdLib|MdePkg/Library/PeiPcdLib/PeiPcdLib.inf
   }
@@ -1152,19 +1217,41 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
 !if $(LZMA_ENABLE) == TRUE
       NULL|IntelFrameworkModulePkg/Library/LzmaCustomDecompressLib/LzmaCustomDecompressLib.inf
 !endif
-!if $(TARGET) != RELEASE
+#MWDebug!if $(TARGET) != RELEASE
+#MWDebug      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#MWDebug!endif
+	#MWDebug - start
+	!if $(TARGET) == RELEASE
+	  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+	  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+	!else
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+	  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
 !endif
+	#MWDebug - end
   }
+  #MWDebug
+  CdePkg/CdeServices/CdeServicesDxe.inf
+  CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
+  CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
   IntelFrameworkModulePkg/Universal/Acpi/AcpiS3SaveDxe/AcpiS3SaveDxe.inf {
     <PcdsPatchableInModule>
         gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0xF0000043
     <PcdsFixedAtBuild>
         gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x27
     <LibraryClasses>
-    !if $(TARGET) != RELEASE
+#MWDebug    !if $(TARGET) != RELEASE
+#MWDebug          DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#MWDebug    !endif
+		#MWDebug - start
+		!if $(TARGET) == RELEASE
+		  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+		  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+		!else
           DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+		  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
     !endif
+		#MWDebug - end
        <BuildOptions>
         ICC:*_*_*_CC_FLAGS = /D MDEPKG_NDEBUG
         GCC:*_*_*_CC_FLAGS = -D MDEPKG_NDEBUG
@@ -1179,9 +1266,18 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
   MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
   MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf  {
     <LibraryClasses>
-!if $(TARGET) != RELEASE
+#MWDebug !if $(TARGET) != RELEASE
+#MWDebug       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#MWDebug !endif
+		#MWDebug - start
+		!if $(TARGET) == RELEASE
+		  DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+		  SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+		!else
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+		  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
 !endif
+		#MWDebug - end
   }
   
 !if $(DXE_ARCHITECTURE) == X64
@@ -1354,9 +1450,18 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
 
   Vlv2TbltDevicePkg/VlvPlatformInitDxe/VlvPlatformInitDxe.inf{
     <LibraryClasses>
-!if $(TARGET) != RELEASE
+#MWDebug!if $(TARGET) != RELEASE
+#MWDebug      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#MWDebug!endif
+	  #MWDebug - start
+	  !if $(TARGET) == RELEASE
+	    DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+	    SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+	  !else
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+	    SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
 !endif
+	  #MWDebug - end
       PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
   }
 
@@ -1418,9 +1523,18 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
   #
   $(PLATFORM_PACKAGE)/PlatformSmm/PlatformSmm.inf{
     <LibraryClasses>
-    !if $(TARGET) != RELEASE
+#MWDebug    !if $(TARGET) != RELEASE
+#MWDebug          DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+#MWDebug    !endif
+          #MWDebug - start
+          !if $(TARGET) == RELEASE
+            DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+            SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+          !else
           DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+            SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
     !endif
+          #MWDebug - end
           PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
   }
   $(PLATFORM_PACKAGE)/PlatformInfoDxe/PlatformInfoDxe.inf
@@ -1688,7 +1802,16 @@ MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteSmmDxe.inf
       FILE_GUID = F1E68873-DA37-4AA0-A12F-F0F8EBA2B24E
     <LibraryClasses>
       FmpAuthenticationLib|SecurityPkg/Library/FmpAuthenticationLibRsa2048Sha256/FmpAuthenticationLibRsa2048Sha256.inf
+#MWDebug      DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+	  #MWDebug - start
+	  !if $(TARGET) == RELEASE
       DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+	    SerialPortLib|MdePkg/Library/BaseSerialPortLibNull/BaseSerialPortLibNull.inf
+	  !else
+	    DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+	    SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
+	  !endif
+	  #MWDebug - end
   }
 
 !endif

@@ -42,6 +42,9 @@ NOTE: EDKEmu build and MinnowBoard build CAN NOT be used alternating in the
 
 ## Revision History
 
+### 20190513
+* CdePkg: initial revision - standard C Library and standard headerfile usage
+
 ### 20190225
 * enable emulation build and debug
 * improve MinnowBoard build

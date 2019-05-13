@@ -176,6 +176,9 @@ APRIORI DXE {
   INF  Nt32Pkg/WinNtOemHookStatusCodeHandlerDxe/WinNtOemHookStatusCodeHandlerDxe.inf
   }
 
+INF  CdePkg\CdeServices\CdeServicesDxe.inf
+INF  CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
+INF  CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 INF  MdeModulePkg/Core/Pei/PeiMain.inf
 INF  MdeModulePkg/Universal/PCD/Pei/Pcd.inf
 INF  MdeModulePkg/Universal/ReportStatusCodeRouter/Pei/ReportStatusCodeRouterPei.inf
@@ -384,6 +387,13 @@ INF MdeModulePkg/Universal/LoadFileOnFv2/LoadFileOnFv2.inf
     }
   }
 
+[Rule.Common.DXE_DRIVER.BINARY]
+  FILE DRIVER = $(NAMED_GUID) {
+    DXE_DEPEX DXE_DEPEX Optional       |.depex
+    PE32      PE32                     |.efi
+    UI        STRING="$(MODULE_NAME)" Optional
+    VERSION   STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
+  }
 [Rule.Common.DXE_RUNTIME_DRIVER]
   FILE DRIVER = $(NAMED_GUID) {
     DXE_DEPEX    DXE_DEPEX Optional      $(INF_OUTPUT)/$(MODULE_NAME).depex

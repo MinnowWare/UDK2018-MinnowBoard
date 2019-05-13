@@ -1,0 +1,20 @@
+[Defines]
+	INF_VERSION         = 1.26
+	BASE_NAME           = CdeDriverDxe
+	FILE_GUID           = CDE00010-3ACF-44D4-8CB0-346038232B97
+	MODULE_TYPE         = DXE_DRIVER
+	VERSION_STRING      = 0.5
+	ENTRY_POINT			= CdeServicesDxeEntryPoint
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32|X64
+#
+
+[Binaries]
+	DXE_DEPEX|CdeServicesDxe.depex
+[Binaries.IA32]
+	PE32|CdeServicesDxe32.efi
+[Binaries.x64]
+	PE32|CdeServicesDxe64.efi

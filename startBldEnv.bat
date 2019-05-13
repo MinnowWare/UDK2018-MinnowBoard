@@ -5,6 +5,8 @@ if exist conf rd /s /q Conf
 call edksetup.bat Rebuild
 call edksetup --nt32
 call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+echo %~d0
+%~d0
 echo ###################################################################################
 echo ###                                                                             ###
 echo ### To build the EDK emulation:                                                 ###

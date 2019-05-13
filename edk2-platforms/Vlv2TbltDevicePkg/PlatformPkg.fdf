@@ -430,6 +430,10 @@ INF  MdeModulePkg/Universal/Acpi/FirmwarePerformanceDataTableSmm/FirmwarePerform
 INF  MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
 !endif
 
+#MWDebug
+INF  CdePkg\CdeServices\CdeServicesDxe.inf
+INF  CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
+INF  CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 
 INF IntelFrameworkModulePkg/Universal/CpuIoDxe/CpuIoDxe.inf
 INF UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf

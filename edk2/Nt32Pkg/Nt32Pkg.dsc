@@ -104,6 +104,8 @@
   #
   # Basic
   #
+  #MWDebug
+  CdeLib|CdePkg/CdeLib/CdeLib.inf
   BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
   SynchronizationLib|MdePkg/Library/BaseSynchronizationLib/BaseSynchronizationLib.inf
   PrintLib|MdePkg/Library/BasePrintLib/BasePrintLib.inf
@@ -382,6 +384,10 @@
     <BuildOptions>
       *_*_*_CC_FLAGS =
   }
+  #MWDebug
+  CdePkg/CdeServices/CdeServicesDxe.inf
+  CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
+  CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 
   MdeModulePkg/Universal/PCD/Dxe/Pcd.inf {
     <LibraryClasses>

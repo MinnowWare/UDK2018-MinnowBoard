@@ -27047,6 +27047,9 @@
     <ClInclude Include="edk2-platforms\Vlv2TbltDevicePkg\Override\MdeModulePkg\Bus\Pci\XhciDxe\XhciSched.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="edk2\Build\NT32IA32\DEBUG_VS2017\IA32\CdePkg\CdeWelcomeDxe\CdeWelcomeDxe\DEBUG\AutoGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="edk2\MdeModulePkg\Bus\Pci\XhciPei\XhciPei.inf">
