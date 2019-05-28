@@ -1,0 +1,6 @@
+[submodule "edk2/CdePkg"]
+	path = edk2/CdePkg
+	url = https://github.com/MinnowWare/CdePkg.git
+[submodule "edk2/CdeSrcPkg"]
+	path = edk2/CdeSrcPkg
+	url = https://github.com/MinnowWare/CdeSrcPkg.git
