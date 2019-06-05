@@ -42,10 +42,10 @@ NOTE: EDKEmu build and MinnowBoard build CAN NOT be used alternating in the
 
 ## Revision History
 
-### 20190528
+### 20190605
 * removed CdePkg from main tree
 * add submodules CdePkg and CdeSrcPkg
-* [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0100.R01.1905282259.bin)
+* [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0100.R01.1906052209.bin)
 
 ### 20190513
 * CdePkg: initial revision - standard C Library and standard headerfile usage

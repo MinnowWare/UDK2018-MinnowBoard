@@ -218,7 +218,7 @@ Returns:
 					SecPrint("\t1. start Visual Studio\n");
 					SecPrint("\t2. DEBUG->ATTACH TO PROCESS (CTRL + ALT + P) --> SecMain.exe\n");
 					SecPrint("\t3. Break All  (CTRL + ALT + Break) --> SecMain.exe\n");
-					SecPrint("\t4. SET A SOFTWARE BREAKPOINT (F9) in line 230\n");
+					SecPrint("\t4. SET A SOFTWARE BREAKPOINT (F9) in line 241\n");
 					SecPrint("\t5. and press ENTER in this command box\n");
 					SecPrint("\t6. go back to Visual Studio an RUN/SINGLE STEP the application\n");
 					SecPrint("\t7. otherwise press enter to continue...\n");
