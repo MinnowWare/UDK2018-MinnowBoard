@@ -1,10 +1,11 @@
 # UDK2018-Minnowboard
 
 ## Goal
-Get the MinnowBoard running with UDK2018.
+1. Get the MinnowBoard running with UDK2018 and VS2019.
+2. Demonstrate the **_CdePkg_** for *Standard C Library* conform Hosted Environment for UEFI driver development
 
 NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
-      (the startup error message of VS2017 can be ignored)
+      (the startup error message of VS2017/VS2019 can be ignored)
 
 ## HowTo
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC
@@ -24,7 +25,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 7. To build the EDK emulation:
 
-       "BUILD -t VS2017" to build the EDK2
+       "BUILD -t VS2019" to build the EDK2
        
        "rd /s /q build" to clean previous build
        
@@ -37,10 +38,13 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 		
 		(the BIOS binary is placed in the STITCH directory)
 
-NOTE: EDKEmu build and MinnowBoard build CAN NOT be used alternating in the
-      same command box.
+**NOTE: EDKEmu build and MinnowBoard build CAN NOT be used alternating in the
+      same command box.**
 
 ## Revision History
+
+### 20190626
+* add VS2019 support (for both MinnowBoard- and Emulationbuild)
 
 ### 20190605
 * removed CdePkg from main tree

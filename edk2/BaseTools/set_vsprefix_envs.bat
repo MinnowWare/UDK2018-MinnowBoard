@@ -90,26 +90,47 @@ if defined VS140COMNTOOLS (
   )
 )
 
-@REM set VS2017
-if not defined VS150COMNTOOLS (
-  if exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
-    for /f "usebackq tokens=1* delims=: " %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"`) do (
-      if /i "%%i"=="installationPath" call "%%j\VC\Auxiliary\Build\vcvars32.bat"
+rem MWDebug@REM set VS2017
+rem MWDebugif not defined VS150COMNTOOLS (
+rem MWDebug  if exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
+rem MWDebug    for /f "usebackq tokens=1* delims=: " %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"`) do (
+rem MWDebug      if /i "%%i"=="installationPath" call "%%j\VC\Auxiliary\Build\vcvars32.bat"
+rem MWDebug    )
+rem MWDebug  ) else if exist "%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe" (
+rem MWDebug    for /f "usebackq tokens=1* delims=: " %%i in (`"%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe"`) do (
+rem MWDebug      if /i "%%i"=="installationPath" call "%%j\VC\Auxiliary\Build\vcvars32.bat"
+rem MWDebug    )
+rem MWDebug  ) else (
+rem MWDebug    goto SetWinDDK
+rem MWDebug  )
+rem MWDebug)
+rem MWDebug
+rem MWDebugif defined VCToolsInstallDir (
+rem MWDebug  if not defined VS2017_PREFIX (
+rem MWDebug    set "VS2017_PREFIX=%VCToolsInstallDir%"
+rem MWDebug  )
+rem MWDebug)
+rem MWDebug start 
+if defined VS150COMNTOOLS (
+    if defined VCToolsInstallDir (
+        if not defined VS2017_PREFIX (
+            set "VS2017_PREFIX=%VCToolsInstallDir%"
+            echo ################################ VS2017_PREFIX ################################ 
+            ping 127.0.0.0 -n 1 > NUL
+        )
     )
-  ) else if exist "%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe" (
-    for /f "usebackq tokens=1* delims=: " %%i in (`"%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe"`) do (
-      if /i "%%i"=="installationPath" call "%%j\VC\Auxiliary\Build\vcvars32.bat"
-    )
-  ) else (
-    goto SetWinDDK
-  )
 )
 
-if defined VCToolsInstallDir (
-  if not defined VS2017_PREFIX (
-    set "VS2017_PREFIX=%VCToolsInstallDir%"
-  )
+if defined VS160COMNTOOLS (
+    if defined VCToolsInstallDir (
+        if not defined VS2019_PREFIX (
+            set "VS2019_PREFIX=%VCToolsInstallDir%"
+            echo ################################ VS2019_PREFIX ################################ 
+            ping 127.0.0.0 -n 1 > NUL
+        )
+    )
 )
+rem MWDebug end
 if not defined WINSDK10_PREFIX (
   if defined WindowsSdkVerBinPath (
     set "WINSDK10_PREFIX=%WindowsSdkVerBinPath%"
