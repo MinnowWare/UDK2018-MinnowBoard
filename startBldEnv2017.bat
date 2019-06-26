@@ -1,10 +1,20 @@
+@echo off
 set path=%path%;"c:\NASM"
 set PYTHON_HOME=C:\Python27
 cd edk2
 if exist conf rd /s /q Conf
-call edksetup.bat Rebuild
-call edksetup --nt32
-call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+if not exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat" (
+	echo #####################################################################################
+	echo ######################## Visual Studio 2017 is not installed ########################
+	echo #####################################################################################
+	ping -n 10 127.0.0.0 > NUL
+	goto EOF
+) else (
+	call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+	call edksetup.bat Rebuild
+	call edksetup --nt32
+)
 echo %~d0
 %~d0
 echo ###################################################################################
@@ -22,3 +32,4 @@ echo ### NOTE: EDKEmu build and MinnowBoard build CAN NOT be used alternating in
 echo ###       same command box.                                                     ###
 echo ###################################################################################
 cmd.exe
+:EOF
