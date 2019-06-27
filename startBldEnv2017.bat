@@ -4,14 +4,14 @@ set PYTHON_HOME=C:\Python27
 cd edk2
 if exist conf rd /s /q Conf
 
-if not exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat" (
+if not exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat" (
 	echo #####################################################################################
 	echo ######################## Visual Studio 2017 is not installed ########################
 	echo #####################################################################################
 	ping -n 10 127.0.0.0 > NUL
 	goto EOF
 ) else (
-	call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+	call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"
 	call edksetup.bat Rebuild
 	call edksetup --nt32
 )
