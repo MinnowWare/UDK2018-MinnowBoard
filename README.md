@@ -41,7 +41,15 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 **NOTE: EDKEmu build and MinnowBoard build CAN NOT be used alternating in the
       same command box.**
 
+## Known Bugs
+1. *Capsule* doesn't work.
+2. before BIOS build previous *CdePkg* build and FV files has to be deleted manually (clrCdePkgBuild.bat)
+
 ## Revision History
+
+### 20190709
+* add PEI Support
+* [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0100.R01.1907070918.bin)
 
 ### 20190626
 * add VS2019 support (for both MinnowBoard- and Emulationbuild)

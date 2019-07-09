@@ -12,6 +12,8 @@ if not exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\A
 	goto EOF
 ) else (
 	call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"
+        %~d0
+        cd %~p0\edk2
 	call edksetup.bat Rebuild
 	call edksetup --nt32
 )

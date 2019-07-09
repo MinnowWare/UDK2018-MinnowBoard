@@ -356,6 +356,12 @@
   #  PEI Phase modules
   ##
   MdeModulePkg/Core/Pei/PeiMain.inf
+  #MWDebug start
+  #CdePkg/CdeServices/CdeServicesPeiEmu.inf
+  CdePkg/CdeServices/CdeServicesPei.inf
+  CdePkg/CdeWelcomePei/CdeWelcomePei.inf
+  CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
+  #MWDebug end
   MdeModulePkg/Universal/PCD/Pei/Pcd.inf {
     <LibraryClasses>
       PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf

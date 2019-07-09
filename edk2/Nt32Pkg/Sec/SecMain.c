@@ -216,7 +216,7 @@ Returns:
                 if(0 == strcmp("/debug", Argv[i])){
 					//SecPrint("IF YOU WANT TO DEBUG from the very beginning of the EMULATION:\n\t1. start the TASKMGR\n\t2. connect SecMain.exe to the debugger\n\t3. and press ENTER in this command box\nOR\n");
 					SecPrint("\t1. start Visual Studio\n");
-					SecPrint("\t2. DEBUG->ATTACH TO PROCESS (CTRL + ALT + P) --> SecMain.exe\n");
+					SecPrint("\t2. from the menu select: DEBUG->ATTACH TO PROCESS (CTRL + ALT + P) --> SecMain.exe\n");
 					SecPrint("\t3. Break All  (CTRL + ALT + Break) --> SecMain.exe\n");
 					SecPrint("\t4. SET A SOFTWARE BREAKPOINT (F9) in line 241\n");
 					SecPrint("\t5. and press ENTER in this command box\n");

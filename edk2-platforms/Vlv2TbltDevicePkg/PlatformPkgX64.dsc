@@ -995,6 +995,10 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdSystemRebootAfterCapsuleProcessFlag|0x0001
   
   
 [Components.IA32]
+#MWDebug
+  CdePkg/CdeServices/CdeServicesPei.inf
+  CdePkg/CdeWelcomePei/CdeWelcomePei.inf
+  CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
 
 !if $(CAPSULE_ENABLE)
   # FMP image decriptor

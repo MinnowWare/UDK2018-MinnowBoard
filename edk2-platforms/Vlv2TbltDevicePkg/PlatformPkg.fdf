@@ -359,6 +359,11 @@ INF RuleOverride = BINARY $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET
 
 INF  UefiCpuPkg/CpuIoPei/CpuIoPei.inf
 
+#MWDebug
+INF  CdePkg/CdeServices/CdeServicesPei.inf
+INF  CdePkg/CdeWelcomePei/CdeWelcomePei.inf
+INF  CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
+
 !if $(CAPSULE_ENABLE) == TRUE
 !if $(DXE_ARCHITECTURE) == X64
 INF  MdeModulePkg/Universal/CapsulePei/CapsulePei.inf
@@ -431,7 +436,7 @@ INF  MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResour
 !endif
 
 #MWDebug
-INF  CdePkg\CdeServices\CdeServicesDxe.inf
+INF  CdePkg/CdeServices/CdeServicesDxe.inf
 INF  CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
 INF  CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 

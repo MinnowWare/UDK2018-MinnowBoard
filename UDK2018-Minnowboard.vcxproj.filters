@@ -15624,6 +15624,9 @@
     <ClCompile Include="edk2-platforms\Vlv2TbltDevicePkg\AcpiPlatform\AcpiPlatform.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="edk2\CdePkg\CdeWelcomePei\CdeWelcomePei.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="edk2\CryptoPkg\Library\OpensslLib\openssl\include\openssl\__DECC_INCLUDE_EPILOGUE.H">
@@ -27047,7 +27050,61 @@
     <ClInclude Include="edk2-platforms\Vlv2TbltDevicePkg\Override\MdeModulePkg\Bus\Pci\XhciDxe\XhciSched.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="edk2\Build\NT32IA32\DEBUG_VS2017\IA32\CdePkg\CdeWelcomeDxe\CdeWelcomeDxe\DEBUG\AutoGen.h">
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\ctype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\errno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\float.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\limits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\locale.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\setjmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\signal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\stdarg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\stddef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\stdio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\stdlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\wchar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\VS2017\wctype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\CDE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="edk2\CdePkg\Include\CdeLoadOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
