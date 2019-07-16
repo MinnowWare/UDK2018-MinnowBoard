@@ -48,7 +48,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 ## Revision History
 
 ### 20190709
-* add PEI Support
+* add initial PEI Support, rudimentary functional range
 * [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0100.R01.1907070918.bin)
 
 ### 20190626
