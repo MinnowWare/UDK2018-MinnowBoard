@@ -4,3 +4,6 @@
 [submodule "edk2/CdeSrcPkg"]
 	path = edk2/CdeSrcPkg
 	url = https://github.com/MinnowWare/CdeSrcPkg.git
+[submodule "edk2/CdeValidationPkg"]
+	path = edk2/CdeValidationPkg
+	url = https://www.github.com/minnowware/CdeValidationPkg.git
