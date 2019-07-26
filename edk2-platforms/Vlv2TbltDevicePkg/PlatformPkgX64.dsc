@@ -1238,6 +1238,9 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
   CdePkg/CdeServices/CdeServicesDxe.inf
   CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
   CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
+
+  CdeValidationPkg/TIME_H/clockDxe/clockDxe.inf
+
   IntelFrameworkModulePkg/Universal/Acpi/AcpiS3SaveDxe/AcpiS3SaveDxe.inf {
     <PcdsPatchableInModule>
         gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0xF0000043

@@ -47,6 +47,13 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 ## Revision History
 
+### 20190726\Branch CdeValPkg
+* initial version of branch CdeValPkg
+* add MFNBAR as bare/nacked parameter for CDEMOFINE macro
+* add clockDxe commandline to CdeLoadOptions.h
+* update CdeSrcPkg/b81394c620206ebbc300216652cd43d7f4ac94e3
+
+
 ### 20190709
 * add initial PEI Support, rudimentary functional range
 * [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0100.R01.1907070918.bin)

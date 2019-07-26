@@ -395,6 +395,8 @@
   CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
   CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 
+  CdeValidationPkg/TIME_H/clockDxe/clockDxe.inf
+
   MdeModulePkg/Universal/PCD/Dxe/Pcd.inf {
     <LibraryClasses>
       PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
