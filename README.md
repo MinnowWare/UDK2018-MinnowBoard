@@ -47,6 +47,9 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 ## Revision History
 
+### 20190727\Branch CdeValPkg
+* try to fix
+
 ### 20190726\Branch CdeValPkg
 * initial version of branch CdeValPkg
 * add MFNBAR as bare/nacked parameter for CDEMOFINE macro
