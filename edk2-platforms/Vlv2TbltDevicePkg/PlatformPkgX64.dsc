@@ -1000,6 +1000,10 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdSystemRebootAfterCapsuleProcessFlag|0x0001
   CdePkg/CdeWelcomePei/CdeWelcomePei.inf
   CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
 
+  CdeValidationPkg/TIME_H/clockPei/clockPei.inf
+  CdeValidationPkg/CTYPE_H/isalphaPei/isalphaPei.inf
+  CdeValidationPkg/CTYPE_H/isalnumPei/isalnumPei.inf
+
 !if $(CAPSULE_ENABLE)
   # FMP image decriptor
   Vlv2TbltDevicePkg/Feature/Capsule/SystemFirmwareDescriptor/SystemFirmwareDescriptor.inf {
@@ -1240,6 +1244,19 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
   CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 
   CdeValidationPkg/TIME_H/clockDxe/clockDxe.inf
+  CdeValidationPkg/CTYPE_H/isalnumDxe/build.inf
+  CdeValidationPkg/CTYPE_H/isalphaDxe/build.inf
+  CdeValidationPkg/CTYPE_H/iscntrlDxe/build.inf
+  CdeValidationPkg/CTYPE_H/isdigitDxe/build.inf
+  CdeValidationPkg/CTYPE_H/isgraphDxe/build.inf
+  CdeValidationPkg/CTYPE_H/islowerDxe/build.inf
+  CdeValidationPkg/CTYPE_H/isprintDxe/build.inf
+  CdeValidationPkg/CTYPE_H/ispunctDxe/build.inf
+  CdeValidationPkg/CTYPE_H/isspaceDxe/build.inf
+  CdeValidationPkg/CTYPE_H/isupperDxe/build.inf
+  CdeValidationPkg/CTYPE_H/isxdigitDxe/build.inf
+  CdeValidationPkg/CTYPE_H/tolowerDxe/build.inf
+  CdeValidationPkg/CTYPE_H/toupperDxe/build.inf
 
   IntelFrameworkModulePkg/Universal/Acpi/AcpiS3SaveDxe/AcpiS3SaveDxe.inf {
     <PcdsPatchableInModule>

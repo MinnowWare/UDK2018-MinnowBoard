@@ -47,6 +47,9 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 ## Revision History
 
+###	20190728\Branch CdeValPkg
+* add all <em>CTYPE.H</em>-functions for DXE
+
 ### 20190727/2
 * add <em>clockPei()</em>
 

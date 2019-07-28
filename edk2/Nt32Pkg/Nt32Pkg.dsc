@@ -361,6 +361,11 @@
   CdePkg/CdeServices/CdeServicesPei.inf
   CdePkg/CdeWelcomePei/CdeWelcomePei.inf
   CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
+
+  CdeValidationPkg/TIME_H/clockPei/clockPei.inf
+  CdeValidationPkg/CTYPE_H/isalphaPei/isalphaPei.inf
+  CdeValidationPkg/CTYPE_H/isalnumPei/isalnumPei.inf
+
   #MWDebug end
   MdeModulePkg/Universal/PCD/Pei/Pcd.inf {
     <LibraryClasses>
@@ -396,6 +401,20 @@
   CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 
   CdeValidationPkg/TIME_H/clockDxe/clockDxe.inf
+
+    CdeValidationPkg/CTYPE_H/isalnumDxe/build.inf
+    CdeValidationPkg/CTYPE_H/isalphaDxe/build.inf
+    CdeValidationPkg/CTYPE_H/iscntrlDxe/build.inf
+    CdeValidationPkg/CTYPE_H/isdigitDxe/build.inf
+    CdeValidationPkg/CTYPE_H/isgraphDxe/build.inf
+    CdeValidationPkg/CTYPE_H/islowerDxe/build.inf
+    CdeValidationPkg/CTYPE_H/isprintDxe/build.inf
+    CdeValidationPkg/CTYPE_H/ispunctDxe/build.inf
+    CdeValidationPkg/CTYPE_H/isspaceDxe/build.inf
+    CdeValidationPkg/CTYPE_H/isupperDxe/build.inf
+    CdeValidationPkg/CTYPE_H/isxdigitDxe/build.inf
+    CdeValidationPkg/CTYPE_H/tolowerDxe/build.inf
+    CdeValidationPkg/CTYPE_H/toupperDxe/build.inf
 
   MdeModulePkg/Universal/PCD/Dxe/Pcd.inf {
     <LibraryClasses>
