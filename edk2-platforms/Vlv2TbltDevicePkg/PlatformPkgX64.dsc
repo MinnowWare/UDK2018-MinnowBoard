@@ -1001,8 +1001,20 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdSystemRebootAfterCapsuleProcessFlag|0x0001
   CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
 
   CdeValidationPkg/TIME_H/clockPei/clockPei.inf
-  CdeValidationPkg/CTYPE_H/isalphaPei/isalphaPei.inf
-  CdeValidationPkg/CTYPE_H/isalnumPei/isalnumPei.inf
+
+  CdeValidationPkg/CTYPE_H/isalnumPei/build.inf
+  CdeValidationPkg/CTYPE_H/isalphaPei/build.inf
+  CdeValidationPkg/CTYPE_H/iscntrlPei/build.inf
+  CdeValidationPkg/CTYPE_H/isdigitPei/build.inf
+  CdeValidationPkg/CTYPE_H/isgraphPei/build.inf
+  CdeValidationPkg/CTYPE_H/islowerPei/build.inf
+  CdeValidationPkg/CTYPE_H/isprintPei/build.inf
+  CdeValidationPkg/CTYPE_H/ispunctPei/build.inf
+  CdeValidationPkg/CTYPE_H/isspacePei/build.inf
+  CdeValidationPkg/CTYPE_H/isupperPei/build.inf
+  CdeValidationPkg/CTYPE_H/isxdigitPei/build.inf
+  CdeValidationPkg/CTYPE_H/tolowerPei/build.inf
+  CdeValidationPkg/CTYPE_H/toupperPei/build.inf
 
 !if $(CAPSULE_ENABLE)
   # FMP image decriptor

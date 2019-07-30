@@ -365,8 +365,20 @@ INF  CdePkg/CdeWelcomePei/CdeWelcomePei.inf
 INF  CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
 
 INF  CdeValidationPkg/TIME_H/clockPei/clockPei.inf
-INF  CdeValidationPkg/CTYPE_H/isalphaPei/isalphaPei.inf
-INF  CdeValidationPkg/CTYPE_H/isalnumPei/isalnumPei.inf
+
+INF  CdeValidationPkg/CTYPE_H/isalnumPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/isalphaPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/iscntrlPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/isdigitPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/isgraphPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/islowerPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/isprintPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/ispunctPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/isspacePei/build.inf
+INF  CdeValidationPkg/CTYPE_H/isupperPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/isxdigitPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/tolowerPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/toupperPei/build.inf
 
 !if $(CAPSULE_ENABLE) == TRUE
 !if $(DXE_ARCHITECTURE) == X64
