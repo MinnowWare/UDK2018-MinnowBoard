@@ -47,6 +47,10 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 ## Revision History
 
+### 20190802/1\Branch CdeValPkg
+* WinNTx86-64 (Microsoft C Library)
+* WinNTx86-64 (Torito C Library)
+
 ### 20190730\Branch CdeValPkg
 * add all <em>CTYPE.H()< / em> -functions to PEI post phase
 
