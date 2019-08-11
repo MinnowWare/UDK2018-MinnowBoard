@@ -364,19 +364,21 @@
 
   CdeValidationPkg/TIME_H/clockPei/clockPei.inf
 
-    CdeValidationPkg/CTYPE_H/isalnumPei/build.inf
-    CdeValidationPkg/CTYPE_H/isalphaPei/build.inf
-    CdeValidationPkg/CTYPE_H/iscntrlPei/build.inf
-    CdeValidationPkg/CTYPE_H/isdigitPei/build.inf
-    CdeValidationPkg/CTYPE_H/isgraphPei/build.inf
-    CdeValidationPkg/CTYPE_H/islowerPei/build.inf
-    CdeValidationPkg/CTYPE_H/isprintPei/build.inf
-    CdeValidationPkg/CTYPE_H/ispunctPei/build.inf
-    CdeValidationPkg/CTYPE_H/isspacePei/build.inf
-    CdeValidationPkg/CTYPE_H/isupperPei/build.inf
-    CdeValidationPkg/CTYPE_H/isxdigitPei/build.inf
-    CdeValidationPkg/CTYPE_H/tolowerPei/build.inf
-    CdeValidationPkg/CTYPE_H/toupperPei/build.inf
+#    CdeValidationPkg/CTYPE_H/isalnumPei/build.inf
+#    CdeValidationPkg/CTYPE_H/isalphaPei/build.inf
+#    CdeValidationPkg/CTYPE_H/iscntrlPei/build.inf
+#    CdeValidationPkg/CTYPE_H/isdigitPei/build.inf
+#    CdeValidationPkg/CTYPE_H/isgraphPei/build.inf
+#    CdeValidationPkg/CTYPE_H/islowerPei/build.inf
+#    CdeValidationPkg/CTYPE_H/isprintPei/build.inf
+#    CdeValidationPkg/CTYPE_H/ispunctPei/build.inf
+#    CdeValidationPkg/CTYPE_H/isspacePei/build.inf
+#    CdeValidationPkg/CTYPE_H/isupperPei/build.inf
+#    CdeValidationPkg/CTYPE_H/isxdigitPei/build.inf
+#    CdeValidationPkg/CTYPE_H/tolowerPei/build.inf
+#    CdeValidationPkg/CTYPE_H/toupperPei/build.inf
+    CdeValidationPkg/CTYPE_H/ctypeALLPei/build.inf
+    CdeValidationPkg/WCTYPE_H/wctypeALLPei/build.inf
 
   #MWDebug end
   MdeModulePkg/Universal/PCD/Pei/Pcd.inf {
@@ -414,19 +416,21 @@
 
   CdeValidationPkg/TIME_H/clockDxe/clockDxe.inf
 
-    CdeValidationPkg/CTYPE_H/isalnumDxe/build.inf
-    CdeValidationPkg/CTYPE_H/isalphaDxe/build.inf
-    CdeValidationPkg/CTYPE_H/iscntrlDxe/build.inf
-    CdeValidationPkg/CTYPE_H/isdigitDxe/build.inf
-    CdeValidationPkg/CTYPE_H/isgraphDxe/build.inf
-    CdeValidationPkg/CTYPE_H/islowerDxe/build.inf
-    CdeValidationPkg/CTYPE_H/isprintDxe/build.inf
-    CdeValidationPkg/CTYPE_H/ispunctDxe/build.inf
-    CdeValidationPkg/CTYPE_H/isspaceDxe/build.inf
-    CdeValidationPkg/CTYPE_H/isupperDxe/build.inf
-    CdeValidationPkg/CTYPE_H/isxdigitDxe/build.inf
-    CdeValidationPkg/CTYPE_H/tolowerDxe/build.inf
-    CdeValidationPkg/CTYPE_H/toupperDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isalnumDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isalphaDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/iscntrlDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isdigitDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isgraphDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/islowerDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isprintDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/ispunctDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isspaceDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isupperDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/isxdigitDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/tolowerDxe/build.inf
+#    CdeValidationPkg/CTYPE_H/toupperDxe/build.inf
+    CdeValidationPkg/CTYPE_H/ctypeALLDxe/build.inf
+    CdeValidationPkg/WCTYPE_H/wctypeALLDxe/build.inf
 
   MdeModulePkg/Universal/PCD/Dxe/Pcd.inf {
     <LibraryClasses>

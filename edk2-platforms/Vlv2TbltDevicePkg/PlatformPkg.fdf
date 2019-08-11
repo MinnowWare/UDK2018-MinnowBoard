@@ -366,19 +366,21 @@ INF  CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
 
 INF  CdeValidationPkg/TIME_H/clockPei/clockPei.inf
 
-INF  CdeValidationPkg/CTYPE_H/isalnumPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/isalphaPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/iscntrlPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/isdigitPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/isgraphPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/islowerPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/isprintPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/ispunctPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/isspacePei/build.inf
-INF  CdeValidationPkg/CTYPE_H/isupperPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/isxdigitPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/tolowerPei/build.inf
-INF  CdeValidationPkg/CTYPE_H/toupperPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isalnumPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isalphaPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/iscntrlPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isdigitPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isgraphPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/islowerPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isprintPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/ispunctPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isspacePei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isupperPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isxdigitPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/tolowerPei/build.inf
+#INF  CdeValidationPkg/CTYPE_H/toupperPei/build.inf
+INF  CdeValidationPkg/CTYPE_H/ctypeALLPei/build.inf
+INF  CdeValidationPkg/WCTYPE_H/wctypeALLPei/build.inf
 
 !if $(CAPSULE_ENABLE) == TRUE
 !if $(DXE_ARCHITECTURE) == X64
@@ -456,20 +458,22 @@ INF  CdePkg/CdeServices/CdeServicesDxe.inf
 INF  CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
 INF  CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
 
-INF  CdeValidationPkg/TIME_H/clockDxe/clockDxe.inf
-INF  CdeValidationPkg/CTYPE_H/isalnumDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/isalphaDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/iscntrlDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/isdigitDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/isgraphDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/islowerDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/isprintDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/ispunctDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/isspaceDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/isupperDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/isxdigitDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/tolowerDxe/build.inf
-INF  CdeValidationPkg/CTYPE_H/toupperDxe/build.inf
+#INF  CdeValidationPkg/TIME_H/clockDxe/clockDxe.inf
+#INF  CdeValidationPkg/CTYPE_H/isalnumDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isalphaDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/iscntrlDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isdigitDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isgraphDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/islowerDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isprintDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/ispunctDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isspaceDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isupperDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/isxdigitDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/tolowerDxe/build.inf
+#INF  CdeValidationPkg/CTYPE_H/toupperDxe/build.inf
+INF  CdeValidationPkg/CTYPE_H/ctypeALLDxe/build.inf
+INF  CdeValidationPkg/WCTYPE_H/wctypeALLDxe/build.inf
 
 INF IntelFrameworkModulePkg/Universal/CpuIoDxe/CpuIoDxe.inf
 INF UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf
