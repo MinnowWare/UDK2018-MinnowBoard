@@ -47,6 +47,11 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 ## Revision History
 
+### 20190822\Branch CdeValPkg
+* place CDE*.SLN solution files into EDK2 directory, to be able to use Visual Studio solutions
+  EDK2 directory without MinnowBoard build environment
+* improve CdeValidationPkg
+
 ### 20190811\Branch CdeValPkg
 * add validation driver/executables for all `ctype.h`- and `wctype.h`-related functions:
     (ctypeALLPei, ctypeALLDxe, wctypeALLPei, wctypeALLDxe)
