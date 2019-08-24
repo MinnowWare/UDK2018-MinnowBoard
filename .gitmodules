@@ -1,1 +1,4 @@
   
+[submodule "edk2"]
+	path = edk2
+	url = https://github.com/MinnowWare/edk2-vUDK2018.git
