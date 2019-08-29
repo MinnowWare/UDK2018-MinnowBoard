@@ -105,7 +105,7 @@
   UefiDriverEntryPoint|MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf
   UefiApplicationEntryPoint|MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint.inf
   DxeSmmDriverEntryPoint|IntelFrameworkPkg/Library/DxeSmmDriverEntryPoint/DxeSmmDriverEntryPoint.inf
-!if $(HTTP_BOOT_SUPPORT) == TRUE  
+!if $(HTTP_BOOT_SUPPORT) == TRUE
   TcgPhysicalPresenceLib|SecurityPkg/Library/DxeTcgPhysicalPresenceLib/DxeTcgPhysicalPresenceLib.inf
   Tcg2PhysicalPresenceLib|SecurityPkg/Library/DxeTcg2PhysicalPresenceLib/DxeTcg2PhysicalPresenceLib.inf
   TcgPpVendorLib|SecurityPkg/Library/TcgPpVendorLibNull/TcgPpVendorLibNull.inf
@@ -113,7 +113,7 @@
   Tpm2DeviceLib|SecurityPkg/Library/Tpm2DeviceLibRouter/Tpm2DeviceLibRouterDxe.inf
   TlsLib|CryptoPkg/Library/TlsLib/TlsLib.inf
 !endif
-  
+
   #
   # Basic
   #
@@ -261,9 +261,13 @@
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
   PeCoffExtraActionLib|SourceLevelDebugPkg/Library/PeCoffExtraActionLibDebug/PeCoffExtraActionLibDebug.inf
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Pei.inf
+!else
   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibSerialPort/DebugCommunicationLibSerialPort.inf
   PlatformHookLib|MdeModulePkg/Library/BasePlatformHookLibNull/BasePlatformHookLibNull.inf
   SerialPortLib|MdeModulePkg/Library/BaseSerialPortLib16550/BaseSerialPortLib16550.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/SecPeiDebugAgentLib.inf
 !else
   PeCoffExtraActionLib|MdePkg/Library/BasePeCoffExtraActionLibNull/BasePeCoffExtraActionLibNull.inf
@@ -359,8 +363,12 @@
   HashLib|SecurityPkg/Library/HashLibBaseCryptoRouter/HashLibBaseCryptoRouterPei.inf
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
   PeCoffExtraActionLib|SourceLevelDebugPkg/Library/PeCoffExtraActionLibDebug/PeCoffExtraActionLibDebug.inf
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+    DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Pei.inf
+!else
   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibSerialPort/DebugCommunicationLibSerialPort.inf
   SerialPortLib|MdeModulePkg/Library/BaseSerialPortLib16550/BaseSerialPortLib16550.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/SecPeiDebugAgentLib.inf 
 !else
   PeCoffExtraActionLib|MdePkg/Library/BasePeCoffExtraActionLibNull/BasePeCoffExtraActionLibNull.inf
@@ -374,8 +382,6 @@
   Tpm2DeviceLib|Vlv2TbltDevicePkg/Library/Tpm2DeviceLibSeCPei/Tpm2DeviceLibSeC.inf
 !endif
 
-
-
 [LibraryClasses.X64]
   HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
   MemoryAllocationLib|MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
@@ -386,6 +392,7 @@
   !if $(SECURE_BOOT_ENABLE) == TRUE
     BaseCryptLib|CryptoPkg/Library/BaseCryptLib/BaseCryptLib.inf
   !endif
+
 [LibraryClasses.IA32]
   #
   # DXE phase common
@@ -421,6 +428,9 @@
 !endif
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Dxe.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/DxeDebugAgentLib.inf
 !endif
 
@@ -434,6 +444,9 @@
 !endif
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Dxe.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/DxeDebugAgentLib.inf
 !endif
 
@@ -448,10 +461,13 @@
 
   BaseCryptLib|CryptoPkg/Library/BaseCryptLib/SmmCryptLib.inf
   !if $(TARGET) != RELEASE
-  DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+    DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
   !endif
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Dxe.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/SmmDebugAgentLib.inf
   TimerLib|$(PLATFORM_PACKAGE)/Library/IntelPchAcpiTimerLib/IntelPchAcpiTimerLib.inf
 !endif
@@ -471,10 +487,13 @@
   PerformanceLib|MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf
 
 !if $(TARGET) != RELEASE
-      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+  DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
 !endif
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Dxe.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/DxeDebugAgentLib.inf
   TimerLib|$(PLATFORM_PACKAGE)/Library/IntelPchAcpiTimerLib/IntelPchAcpiTimerLib.inf
 !endif
@@ -489,16 +508,23 @@
 !endif
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Dxe.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/DxeDebugAgentLib.inf
 !endif
 
 !if $(CAPSULE_ENABLE) == TRUE
   CapsuleLib|MdeModulePkg/Library/DxeCapsuleLibFmp/DxeRuntimeCapsuleLib.inf
 !endif
+
 [LibraryClasses.common.UEFI_DRIVER]
   PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Dxe.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/DxeDebugAgentLib.inf
 !endif
 
@@ -506,6 +532,9 @@
   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
 
 !if $(SOURCE_DEBUG_ENABLE) == TRUE
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Dxe.inf
+!endif
   DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/DxeDebugAgentLib.inf
 !endif
 
@@ -894,11 +923,9 @@ gEfiMdeModulePkgTokenSpaceGuid.PcdSystemRebootAfterCapsuleProcessFlag|0x0001
 
   ## This PCD defines the video horizontal resolution.
   #  This PCD could be set to 0 then video resolution could be at highest resolution.
-  #gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|0
   gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|800
   ## This PCD defines the video vertical resolution.
   #  This PCD could be set to 0 then video resolution could be at highest resolution.
-  #gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|0
   gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|600
 
   ## This PCD defines the Console output column and the default value is 25 according to UEFI spec.
@@ -1034,6 +1061,9 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
       DebugAgentLib|SourceLevelDebugPkg/Library/DebugAgent/SecPeiDebugAgentLib.inf
       PlatformHookLib|MdeModulePkg/Library/BasePlatformHookLibNull/BasePlatformHookLibNull.inf
       SerialPortLib|MdeModulePkg/Library/BaseSerialPortLib16550/BaseSerialPortLib16550.inf
+!if $(SOURCE_DEBUG_USE_USB3) == TRUE
+   DebugCommunicationLib|SourceLevelDebugPkg/Library/DebugCommunicationLibUsb3/DebugCommunicationLibUsb3Pei.inf
+!endif
     }
 !endif
 
@@ -1055,9 +1085,9 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
     <PcdsPatchableInModule>
       gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x803805c6
     <LibraryClasses>
-!if $(TARGET) != RELEASE
+    !if $(TARGET) != RELEASE
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
-!endif
+    !endif
       PcdLib|MdePkg/Library/PeiPcdLib/PeiPcdLib.inf
   }
   $(PLATFORM_PACKAGE)/FvInfoPei/FvInfoPei.inf
@@ -1260,7 +1290,7 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
   MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
   MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteDxe.inf
   MdeModulePkg/Universal/Variable/RuntimeDxe/VariableSmmRuntimeDxe.inf
-   MdeModulePkg/Universal/Variable/RuntimeDxe/VariableSmm.inf {
+  MdeModulePkg/Universal/Variable/RuntimeDxe/VariableSmm.inf {
     <LibraryClasses>
       NULL|MdeModulePkg/Library/VarCheckUefiLib/VarCheckUefiLib.inf
       SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
@@ -1293,9 +1323,9 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
   !if $(TARGET) == DEBUG
     <LibraryClasses>
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
-	  SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
-    !endif
-	}
+      SerialPortLib|$(PLATFORM_PACKAGE)/Library/SerialPortLib/SerialPortLib.inf
+  !endif
+  }
 
   $(PLATFORM_PACKAGE)/PlatformSetupDxe/PlatformSetupDxe.inf
 
@@ -1350,9 +1380,9 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
 
   Vlv2TbltDevicePkg/VlvPlatformInitDxe/VlvPlatformInitDxe.inf{
     <LibraryClasses>
-!if $(TARGET) != RELEASE
+    !if $(TARGET) != RELEASE
       DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
-!endif
+    !endif
       PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
   }
 
@@ -1415,13 +1445,20 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
   $(PLATFORM_PACKAGE)/PlatformSmm/PlatformSmm.inf{
     <LibraryClasses>
     !if $(TARGET) != RELEASE
-          DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
     !endif
-          PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+      PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
   }
   $(PLATFORM_PACKAGE)/PlatformInfoDxe/PlatformInfoDxe.inf
   $(PLATFORM_PACKAGE)/PlatformCpuInfoDxe/PlatformCpuInfoDxe.inf
-  $(PLATFORM_PACKAGE)/PlatformDxe/PlatformDxe.inf
+  $(PLATFORM_PACKAGE)/PlatformDxe/PlatformDxe.inf {
+    <LibraryClasses>
+    !if $(TARGET) != RELEASE
+      DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+    !else
+      DebugLib|MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+    !endif
+  }
   $(PLATFORM_PACKAGE)/PlatformRtcRuntimeDxe/PlatformRtcRuntimeDxe.inf
 
   $(PLATFORM_PACKAGE)/PciPlatform/PciPlatform.inf
@@ -1646,7 +1683,6 @@ $(PLATFORM_BINARY_PACKAGE)/$(DXE_ARCHITECTURE)$(TARGET)/IA32/fTPMInitPeim.inf
 # capsule related drivers
 #
 IntelFrameworkModulePkg/Universal/FirmwareVolume/FwVolDxe/FwVolDxe.inf
-
 MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteSmmDxe.inf
 
   Vlv2TbltDevicePkg/Application/FirmwareUpdate/FirmwareUpdate.inf

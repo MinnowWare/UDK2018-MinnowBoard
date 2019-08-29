@@ -47,8 +47,13 @@ DEFINE FLASH_REGION_AZALIABIN_BASE                            = 0xFFD08000
 
 !endif
 
+!if $(MINNOW2_FSP_BUILD) == TRUE
 DEFINE FLASH_REGION_FVMAIN_OFFSET                             = 0x00110000
 DEFINE FLASH_REGION_FVMAIN_SIZE                               = 0x00210000
+!else
+DEFINE FLASH_REGION_FVMAIN_OFFSET                             = 0x000C0000
+DEFINE FLASH_REGION_FVMAIN_SIZE                               = 0x00260000
+!endif
 
 DEFINE FLASH_REGION_FV_RECOVERY2_OFFSET                       = 0x00320000
 DEFINE FLASH_REGION_FV_RECOVERY2_SIZE                         = 0x00070000

@@ -51,7 +51,8 @@ Abstract:
 #include <Library/PcdLib.h>
 #include <Protocol/VariableLock.h>
 #include <Library/PchPlatformLib.h>
-
+#include <Protocol/SmmBase2.h>
+#include <Library/DebugLib.h>
 
 //
 // VLV2 GPIO GROUP OFFSET
@@ -441,6 +442,21 @@ SpiBiosProtectionFunction(
   UINTN                             BiosFlaLower1;
   UINTN                             BiosFlaLimit1;  
   
+  EFI_SMM_BASE2_PROTOCOL            *SmmBase2;
+  EFI_STATUS                        Status;
+  UINT32                            Data32;
+  UINT16                            Data16;
+
+  //
+  // This feature requires smm stack. check whether smm stack is ready. if not, just return
+  //
+  Status = gBS->LocateProtocol (&gEfiSmmBase2ProtocolGuid, NULL, (VOID**) &SmmBase2);
+  if (EFI_ERROR (Status)) {
+    DEBUG((EFI_D_INFO, "smm stack is not ready\n"));
+    return;
+  } else {
+    DEBUG((EFI_D_INFO, "smm stack is ready\n"));
+  }
 
   BiosFlaLower0 = PcdGet32(PcdFlashMicroCodeAddress)-PcdGet32(PcdBiosImageBase);
   BiosFlaLimit0 = PcdGet32(PcdFlashMicroCodeSize)-1;  
@@ -461,6 +477,7 @@ SpiBiosProtectionFunction(
                        );
   SpiBase          = MmioRead32(mPciD31F0RegBase + R_PCH_LPC_SPI_BASE) & B_PCH_LPC_SPI_BASE_BAR;
 
+  DEBUG((EFI_D_INFO, "SpiBase = 0x%x\n", (UINTN)SpiBase));
   //
   //Set SMM_BWP, WPD and LE bit
   //
@@ -468,6 +485,16 @@ SpiBiosProtectionFunction(
   MmioAnd32 ((UINTN) (SpiBase + R_PCH_SPI_BCR), (UINT8)(~B_PCH_SPI_BCR_BIOSWE));
   MmioOr32 ((UINTN) (SpiBase + R_PCH_SPI_BCR), (UINT8) B_PCH_SPI_BCR_BLE);
 
+  Data32 = MmioRead32 (SpiBase + R_PCH_SPI_BCR);
+  S3BootScriptSaveMemWrite (
+      S3BootScriptWidthUint32,
+      (UINTN)(SpiBase + R_PCH_SPI_BCR),
+      1,
+      &Data32
+  );
+  DEBUG((EFI_D_INFO, "R_PCH_SPI_BCR \n"));
+  DEBUG((EFI_D_INFO, "MmioRead32 (0x%x, 0x%x) = 0x%x \n", (UINTN) SpiBase, (UINT8) R_PCH_SPI_BCR, (UINT32) Data32));
+  
   //
   //First check if FLOCKDN or PR0FLOCKDN is set. No action if either of them set already.
   //
@@ -487,6 +514,16 @@ SpiBiosProtectionFunction(
     B_PCH_SPI_PR0_RPE|B_PCH_SPI_PR0_WPE|\
     (B_PCH_SPI_PR0_PRB_MASK&(BiosFlaLower0>>12))|(B_PCH_SPI_PR0_PRL_MASK&(BiosFlaLimit0>>12)<<16));
 
+  Data32 = MmioRead32 (SpiBase + R_PCH_SPI_PR0);      
+  S3BootScriptSaveMemWrite (
+    S3BootScriptWidthUint32,
+    (UINTN)(SpiBase + R_PCH_SPI_PR0),
+    1,
+    &Data32
+  );
+  DEBUG((EFI_D_INFO, "R_PCH_SPI_PR0 \n"));
+  DEBUG((EFI_D_INFO, "MmioRead32 (0x%x, 0x%x) = 0x%x \n", (UINTN) SpiBase, (UINT8) R_PCH_SPI_PR0, (UINT32) Data32));
+  
   //
   //Set PR1
   //
@@ -494,12 +531,62 @@ SpiBiosProtectionFunction(
   MmioOr32((UINTN)(SpiBase + R_PCH_SPI_PR1),
     B_PCH_SPI_PR1_RPE|B_PCH_SPI_PR1_WPE|\
     (B_PCH_SPI_PR1_PRB_MASK&(BiosFlaLower1>>12))|(B_PCH_SPI_PR1_PRL_MASK&(BiosFlaLimit1>>12)<<16));
+  Data32 = MmioRead32 (SpiBase + R_PCH_SPI_PR1);      
+  S3BootScriptSaveMemWrite (
+    S3BootScriptWidthUint32,
+    (UINTN)(SpiBase + R_PCH_SPI_PR1),
+    1,
+    &Data32
+  );
+  DEBUG((EFI_D_INFO, "R_PCH_SPI_PR1 \n"));
+  DEBUG((EFI_D_INFO, "MmioRead32 (0x%x, 0x%x) = 0x%x \n", (UINTN) SpiBase, (UINT8) R_PCH_SPI_PR1, (UINT32) Data32));
 
+  //
+  // Check and set individual lock
+  //
+  MmioOr16 ((UINTN) (SpiBase + R_PCH_SPI_IND_LOCK),
+    B_PCH_SPI_IND_LOCK_BMWAG |
+    B_PCH_SPI_IND_LOCK_BMRAG |
+    B_PCH_SPI_IND_LOCK_PR0 |
+    B_PCH_SPI_IND_LOCK_PR1 |
+    B_PCH_SPI_IND_LOCK_PR2 |
+    B_PCH_SPI_IND_LOCK_PR3 |
+    B_PCH_SPI_IND_LOCK_SCF |
+    B_PCH_SPI_IND_LOCK_PREOP |
+    B_PCH_SPI_IND_LOCK_OPTYPE |
+    B_PCH_SPI_IND_LOCK_OPMENU);
+  Data16 = MmioRead16 (SpiBase + R_PCH_SPI_IND_LOCK); 
+  S3BootScriptSaveMemWrite (
+    S3BootScriptWidthUint16,
+    (UINTN)(SpiBase + R_PCH_SPI_IND_LOCK),
+    1,
+    &Data16
+  );
+  DEBUG((EFI_D_INFO, "R_PCH_SPI_IND_LOCK \n"));
+  DEBUG((EFI_D_INFO, "MmioRead16 (0x%x, 0x%x) = 0x%x \n", (UINTN) SpiBase, (UINT8) R_PCH_SPI_IND_LOCK, (UINT16) Data16));
+
+  //
+  // Verify if it's really locked.
+  //
+  if ((MmioRead16 (SpiBase + R_PCH_SPI_IND_LOCK) & B_PCH_SPI_IND_LOCK_PR0) == 0) {
+    DEBUG((EFI_D_ERROR, "Failed to lock down individual lock.\n"));
+  }
+  
   //
   //Lock down PRx
   //
   MmioOr16 ((UINTN) (SpiBase + R_PCH_SPI_HSFS), (UINT16) (B_PCH_SPI_HSFS_FLOCKDN));
 
+  Data16 = MmioRead16 (SpiBase + R_PCH_SPI_HSFS); 
+  S3BootScriptSaveMemWrite (
+    S3BootScriptWidthUint16,
+    (UINTN)(SpiBase + R_PCH_SPI_HSFS),
+    1,
+    &Data16
+  );
+  DEBUG((EFI_D_INFO, "R_PCH_SPI_HSFS \n"));
+  DEBUG((EFI_D_INFO, "MmioRead16 (0x%x, 0x%x) = 0x%x \n", (UINTN) SpiBase, (UINT8) R_PCH_SPI_HSFS, (UINT16) Data16));
+  
   //
   // Verify if it's really locked.
   //
@@ -783,6 +870,7 @@ InitializePlatform (
   EFI_HANDLE                          Handle = NULL;
   EFI_EVENT                           mEfiExitBootServicesEvent;
   EFI_EVENT                           RtcEvent;
+  EFI_EVENT                           mEndOfExeEvent;
   VOID                                *RtcCallbackReg = NULL;
   
   mImageHandle = ImageHandle;
@@ -879,12 +967,15 @@ InitializePlatform (
   // Create a ReadyToBoot Event to run enable PR0/PR1 and lock down,unlock variable region
   //
   if(mSystemConfiguration.SpiRwProtect==1) {
-    Status = EfiCreateEventReadyToBootEx (
-               TPL_CALLBACK,
-               SpiBiosProtectionFunction,
-               NULL,
-               &mReadyToBootEvent
-               );
+    Status = gBS->CreateEventEx (
+                  EVT_NOTIFY_SIGNAL,
+                  TPL_CALLBACK,
+                  SpiBiosProtectionFunction,
+                  NULL,
+                  &gEfiEndOfDxeEventGroupGuid,
+                  &mEndOfExeEvent
+                  );
+    DEBUG ((EFI_D_INFO, "Create a EndofExeEvent to run enable PRx and lock down \n"));
   }
   //
   // Create a ReadyToBoot Event to run the thermalzone init process

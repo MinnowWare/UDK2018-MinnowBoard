@@ -42,10 +42,19 @@ NOTE: Visual Studio is here only used for editing the project. The build process
       same command box.**
 
 ## Known Bugs
-1. *Capsule* doesn't work.
+1. fixed 20190830: <del>*Capsule* doesn't work.</del>
 2. before BIOS build previous *CdePkg* build and FV files has to be deleted manually (clrCdePkgBuild.bat)
 
 ## Revision History
+
+### 20190830\Branch CdeValPkg
+* improved build and startup batches
+* [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/MNW2MAX1.X64.0101.R01.1908292234.bin)
+
+### 20190829\Branch CdeValPkg
+* convert EDK2 directory to submodule, to demonstrate *CdePkg* separated from entire MinnowBoard environment
+* update EDK2 to *20190828/OpenSSL*
+* integrate *Release 1.01 Firmware Download (Aug 2019)* from https://firmware.intel.com/projects/minnowboard-max
 
 ### 20190822\Branch CdeValPkg
 * place CDE*.SLN solution files into EDK2 directory, to be able to use Visual Studio solutions

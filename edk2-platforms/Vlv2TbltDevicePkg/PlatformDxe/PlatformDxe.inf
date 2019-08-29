@@ -96,6 +96,7 @@
   gEfiNormalSetupGuid
   gEfiGlobalVariableGuid
   gEfiEventExitBootServicesGuid
+  gEfiEndOfDxeEventGroupGuid                                            ## SOMETIMES_CONSUMES ## Event
   gEfiVlv2VariableGuid
   gEfiSecureBootEnableDisableGuid
   gSystemRtcTimeVariableGuid
@@ -131,6 +132,7 @@
   gIgdOpRegionProtocolGuid
   gExitPmAuthProtocolGuid
   gEdkiiVariableLockProtocolGuid
+  gEfiSmmBase2ProtocolGuid                                              ## SOMETIMES_CONSUMES
 
 [Pcd.common]
   gPlatformModuleTokenSpaceGuid.PcdPBTNDisableInterval
@@ -144,6 +146,12 @@
   gPlatformModuleTokenSpaceGuid.PcdFlashFvRecoverySize
   gFspWrapperTokenSpaceGuid.PcdFlashFvFspBase
   gPlatformModuleTokenSpaceGuid.PcdRtcPowerFailure
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageFtwWorkingBase        ## CONSUMES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageFtwWorkingSize        ## CONSUMES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase          ## CONSUMES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableSize          ## CONSUMES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageFtwSpareBase          ## CONSUMES
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageFtwSpareSize          ## CONSUMES
   
 
 [Depex]

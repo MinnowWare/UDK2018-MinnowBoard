@@ -90,7 +90,16 @@ Copyright (c) 2011  - 2015, Intel Corporation. All rights reserved
 #define R_PCH_SPI_OPMENU1                    0x9C  // Opcode Menu Configuration 1 (32bits)
 
 #define R_PCH_SPI_IND_LOCK                   0xA4  // Indvidual Lock
+#define B_PCH_SPI_IND_LOCK_BMWAG             BIT0  // BMWAG LockDown
+#define B_PCH_SPI_IND_LOCK_BMRAG             BIT1  // BMRAG LockDown
 #define B_PCH_SPI_IND_LOCK_PR0               BIT2  // PR0 LockDown
+#define B_PCH_SPI_IND_LOCK_PR1               BIT3  // PR1 LockDown
+#define B_PCH_SPI_IND_LOCK_PR2               BIT4  // PR2 LockDown
+#define B_PCH_SPI_IND_LOCK_PR3               BIT5  // PR3 LockDown
+#define B_PCH_SPI_IND_LOCK_SCF               BIT6  // SCF LockDown
+#define B_PCH_SPI_IND_LOCK_PREOP             BIT7  // PREP LockDown
+#define B_PCH_SPI_IND_LOCK_OPTYPE            BIT8  // OPTYPE LockDown
+#define B_PCH_SPI_IND_LOCK_OPMENU            BIT9  // OPMENU LockDown
 
 
 #define R_PCH_SPI_FDOC                       0xB0  // Flash Descriptor Observability Control Register (32 bits)
