@@ -47,8 +47,13 @@ DEFINE FLASH_REGION_AZALIABIN_BASE                            = 0xFFD08000
 
 !endif
 
+!if $(MINNOW2_FSP_BUILD) == TRUE
 DEFINE FLASH_REGION_FVMAIN_OFFSET                             = 0x00110000
 DEFINE FLASH_REGION_FVMAIN_SIZE                               = 0x00210000
+!else
+DEFINE FLASH_REGION_FVMAIN_OFFSET                             = 0x000C0000
+DEFINE FLASH_REGION_FVMAIN_SIZE                               = 0x00260000
+!endif
 
 DEFINE FLASH_REGION_FV_RECOVERY2_OFFSET                       = 0x00320000
 DEFINE FLASH_REGION_FV_RECOVERY2_SIZE                         = 0x00070000
@@ -364,6 +369,10 @@ INF  CdePkg/CdeServices/CdeServicesPei.inf
 INF  CdePkg/CdeWelcomePei/CdeWelcomePei.inf
 INF  CdePkg/CdeLoadOptionsPei/CdeLoadOptionsPei.inf
 
+INF  CdeValidationPkg/TIME_H/clock/buildPEI.inf
+INF  CdeValidationPkg/CTYPE_H/ctype/buildPEI.inf
+INF  CdeValidationPkg/WCTYPE_H/wctype/buildPEI.inf
+
 !if $(CAPSULE_ENABLE) == TRUE
 !if $(DXE_ARCHITECTURE) == X64
 INF  MdeModulePkg/Universal/CapsulePei/CapsulePei.inf
@@ -439,6 +448,10 @@ INF  MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResour
 INF  CdePkg/CdeServices/CdeServicesDxe.inf
 INF  CdePkg/CdeWelcomeDxe/CdeWelcomeDxe.inf
 INF  CdePkg/CdeLoadOptionsDxe/CdeLoadOptionsDxe.inf
+
+INF  CdeValidationPkg/TIME_H/clock/buildDXE.inf
+INF  CdeValidationPkg/CTYPE_H/ctype/buildDXE.inf
+INF  CdeValidationPkg/WCTYPE_H/wctype/buildDXE.inf
 
 INF IntelFrameworkModulePkg/Universal/CpuIoDxe/CpuIoDxe.inf
 INF UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf

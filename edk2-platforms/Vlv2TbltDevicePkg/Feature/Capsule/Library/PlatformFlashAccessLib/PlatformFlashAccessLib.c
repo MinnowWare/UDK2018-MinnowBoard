@@ -397,19 +397,12 @@ InternalWriteBlock (
 **/
 EFI_STATUS
 EFIAPI
-/*MWDebug start*/
-PerformFlashWriteWithProgress (
-/*MWDebug end*/
+PerformFlashWrite (
   IN PLATFORM_FIRMWARE_TYPE       FirmwareType,
   IN EFI_PHYSICAL_ADDRESS         FlashAddress,
   IN FLASH_ADDRESS_TYPE           FlashAddressType,
   IN VOID                         *Buffer,
-  IN UINTN                                          Length,
-/*MWDebug start*/
-  IN EFI_FIRMWARE_MANAGEMENT_UPDATE_IMAGE_PROGRESS  Progress,        OPTIONAL
-  IN UINTN                                          StartPercentage,
-  IN UINTN                                          EndPercentage
-/*MWDebug end*/
+  IN UINTN                        Length
   )
 {
   EFI_STATUS            Status = EFI_SUCCESS;
@@ -531,20 +524,6 @@ PerformFlashWriteWithProgress (
 
   return EFI_SUCCESS;
 }
-//MWDebug start
-EFI_STATUS
-EFIAPI
-PerformFlashWrite (
-  IN PLATFORM_FIRMWARE_TYPE       FirmwareType,
-  IN EFI_PHYSICAL_ADDRESS         FlashAddress,
-  IN FLASH_ADDRESS_TYPE           FlashAddressType,
-  IN VOID                         *Buffer,
-  IN UINTN                        Length
-  )
-{
-	return PerformFlashWriteWithProgress(FirmwareType,FlashAddress,FlashAddressType,Buffer,Length,0,0,0);
-}
-//MWDebug end
 
 /**
   Perform microcode write opreation.
