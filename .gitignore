@@ -1,0 +1,10 @@
+ 
+Build 
+.vs 
+edk2/Build 
+edk2/Conf 
+edk2-platforms/MNW2MAX*.ROM.orig 
+edk2/CdeSrcPkg.org 
+edk2-platforms/Vlv2TbltDevicePkg/AutoPlatformCFG.txt 
+edk2-platforms/Vlv2TbltDevicePkg/Stitch/Stitching.log 
+edk2/CdeSrcPkg.src 

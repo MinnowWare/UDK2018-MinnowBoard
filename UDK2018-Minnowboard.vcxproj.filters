@@ -15627,6 +15627,24 @@
     <ClCompile Include="edk2\CdePkg\CdeWelcomePei\CdeWelcomePei.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="edk2\CdeValidationPkg\CTYPE_H\ctype\EfiCallerBaseName.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\CdeValidationPkg\CTYPE_H\ctype\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\CdeValidationPkg\TIME_H\clock\EfiCallerBaseName.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\CdeValidationPkg\TIME_H\clock\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\CdeValidationPkg\WCTYPE_H\wctype\EfiCallerBaseName.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edk2\CdeValidationPkg\WCTYPE_H\wctype\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="edk2\CryptoPkg\Library\OpensslLib\openssl\include\openssl\__DECC_INCLUDE_EPILOGUE.H">
@@ -33577,5 +33595,26 @@
     <None Include="edk2-platforms\Vlv2DeviceRefCodePkg\AcpiTablesPCAT\Video.asl">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\PlatformCapsule.fdf" />
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\PlatformCapsuleGcc.fdf" />
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\PlatformPkg.fdf" />
+    <None Include="edk2-platforms\Vlv2TbltDevicePkg\PlatformPkgGcc.fdf" />
+    <None Include="edk2\CdePkg\CdePkg.dec" />
+    <None Include="edk2\CdePkg\CdePkg.dsc" />
+    <None Include="edk2\CdePkg\CdeWelcomePei\CdeWelcomePei.inf" />
+    <None Include="edk2\CdePkg\CdeWelcomePei\CdeWelcomePei.uni" />
+    <None Include="edk2\CdeValidationPkg\CTYPE_H\ctype\buildDXE.inf" />
+    <None Include="edk2\CdeValidationPkg\CTYPE_H\ctype\buildPEI.inf" />
+    <None Include="edk2\CdeValidationPkg\TIME_H\clock\buildDXE.inf" />
+    <None Include="edk2\CdeValidationPkg\TIME_H\clock\buildPEI.inf" />
+    <None Include="edk2\CdeValidationPkg\WCTYPE_H\wctype\buildDXE.inf" />
+    <None Include="edk2\CdeValidationPkg\WCTYPE_H\wctype\buildPEI.inf" />
+    <None Include="edk2\CdeValidationPkg\.gitignore" />
+    <None Include="edk2\CdeValidationPkg\clean.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="edk2\CdeValidationPkg\dxygndflt.cfg" />
+    <None Include="edk2\CdeValidationPkg\README.md" />
+    <None Include="edk2\CdeValidationPkg\VisualStudioProjectSettings.md" />
   </ItemGroup>
 </Project>
