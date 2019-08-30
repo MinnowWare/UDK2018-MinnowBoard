@@ -47,6 +47,9 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 
 ## Revision History
 
+### 20190830\Branch CdeValPkg/OpenSSL
+* add OpenSSL_1_1_0-stable to CryptoPkg\Library\OpensslLib
+
 ### 20190830\Branch CdeValPkg
 * improved build and startup batches
 * [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/MNW2MAX1.X64.0101.R01.1908292234.bin)
