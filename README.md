@@ -48,7 +48,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 ## Revision History
 ### 20190901
 * add Dediprog flash update
-* [BIOS binary]https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0101.R01.1909012230.bin
+* [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0101.R01.1909012230.bin)
 
 ### 20190830
 * CdeValPkg branch merge
