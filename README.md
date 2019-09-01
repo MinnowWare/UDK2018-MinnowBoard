@@ -2,43 +2,41 @@
 
 ## Goal
 1. Get the MinnowBoard running with UDK2018 and VS2019.
-2. Demonstrate the **_CdePkg_** for *Standard C Library* conform Hosted Environment for UEFI driver development
+2. Demonstrate the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) for *Standard C Library* conform Hosted Environment for UEFI driver development
 
 NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
       (the startup error message of VS2017/VS2019 can be ignored)
 
 ## HowTo
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC
-2. get the GIT repository WebURL
 
-  ![cloneimage](cloneaddr.png)
-  
-3. in the file explorer open the builddrive
+2. in the file explorer open the builddrive
 
-4. right click to open the context menu -> Git clone
+3. right click to open the context menu -> Git clone
 
   ![cloneimage2](clonedest.png)
 
-5. download the repository
+4. download the repository
 
-6. run startBldEnv.bat
+5. run launch2019.bat
 
-7. To build the EDK emulation:
+6. To build the EDK emulation:
 
-       "BUILD -t VS2019" to build the EDK2
+       "launch2019" to build the EDK2
        
        "rd /s /q build" to clean previous build
        
        "start DBG" to start the UEFI BIOS EMULATION
 
-8. To build the MinnowBoard:
-		cd ..\edk2-platforms\Vlv2TbltDevicePkg
+7. To build the MinnowBoard:
 		
-		Build_IFWI.bat MNW2 Release
+		bldREL.BAT
+		   or
+		bldDBG.BAT
 		
 		(the BIOS binary is placed in the STITCH directory)
 
-**NOTE: EDKEmu build and MinnowBoard build CAN NOT be used alternating in the
+**NOTE: EDKEmulation build and MinnowBoard build CAN NOT be used alternating in the
       same command box.**
 
 ## Known Bugs
@@ -80,7 +78,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 * WinNTx86-64 (Torito C Library)
 
 ### 20190730
-* add all <em>CTYPE.H()< / em> -functions to PEI post phase
+* add all <em>CTYPE.H()</em> -functions to PEI post phase
 
 ###	20190728
 * add all <em>CTYPE.H</em>-functions for DXE
