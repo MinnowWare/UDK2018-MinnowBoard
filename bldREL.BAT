@@ -8,8 +8,10 @@ if exist edk2-platforms\Vlv2TbltDevicePkg\Stitch\%BIOS_ID%.bin (
     echo ############################ BUILD SUCCESS ###################################
     echo ##############################################################################
     @dir /s /b edk2-platforms\Vlv2TbltDevicePkg\Stitch\%BIOS_ID%.bin
+    dediBurn /file edk2-platforms\Vlv2TbltDevicePkg\Stitch\%BIOS_ID%.bin
 ) else (
     echo ##############################################################################
     echo #### BUILD FAIL ## BUILD FAIL ## BUILD FAIL ## BUILD FAIL ## BUILD FAIL ######
     echo ##############################################################################
 )
+:EOF
