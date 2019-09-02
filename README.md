@@ -10,30 +10,23 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 ## HowTo
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC
 
-2. clone the UDK2018-MinnowBoard project --recursively
-  
-  a) right click to open the context menu -> Git clone
+2. clone the UDK2018-MinnowBoard project `--recursive`ly<br>
+	i.  git.exe clone --progress --recursive -v "https://github.com/MinnowWare/UDK2018-MinnowBoard.git" "A:\UDK2018-MinnowBoard"<br>
+	or<br>
+        ii. right click to open the context menu -> Git clone<br>
+![cloneimage2](clonedest.png)
 
-  	![cloneimage2](clonedest.png)
+3. To build the EDK emulation:
+`edk2\launch2019.bat` to setup EDK2 / emulation (Nt32Pkg) build environment<br>
+`rd /s /q build` in the `edk2`directory to clean previous EDK2 / emulation build<br>
+`bldDBG.BAT` (Debug) <del> or `bldREL.BAT` (Release)</del> to start the build process in the EDK2 directory<br>
+`start DBG` to start the UEFI BIOS EMULATION<br>
 
-
-5. run launch2019.bat
-
-6. To build the EDK emulation:
-
-       "launch2019" to build the EDK2
-       
-       "rd /s /q build" to clean previous build
-       
-       "start DBG" to start the UEFI BIOS EMULATION
-
-7. To build the MinnowBoard:
-		
-		bldREL.BAT
-		   or
-		bldDBG.BAT
-		
-		(the BIOS binary is placed in the STITCH directory)
+4. To build the MinnowBoard:
+`.\launch2019.bat` to setup MinnowBoard (`Vlv2TbltDevicePkg`) build environment<br>
+`rd /s /q build` in the `.\`directory to clean previous `Vlv2TbltDevicePkg` build<br>
+`bldREL.BAT` (Release) or `bldDBG.BAT` (Debug) to start the build process in the `.\`directory<br>
+If a DediProg is connected to the system, the BIOS is automatically updated in the target system MinnowBoard<br>
 
 **NOTE: EDKEmulation build and MinnowBoard build CAN NOT be used alternating in the
       same command box.**
