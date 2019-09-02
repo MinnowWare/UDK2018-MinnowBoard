@@ -1,13 +1,15 @@
 # UDK2018-Minnowboard
 
 ## Goal
+
+
 1. Get the MinnowBoard running with UDK2018 and VS2019.
 2. Demonstrate the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) for *Standard C Library* conform Hosted Environment for UEFI driver development
 
 NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
       (the startup error message of VS2017/VS2019 can be ignored)
 
-## HowTo
+## HowTo/install/build
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC
 
 2. clone the UDK2018-MinnowBoard project `--recursive`ly<br>
