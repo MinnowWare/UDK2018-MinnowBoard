@@ -10,13 +10,12 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 ## HowTo
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC
 
-2. in the file explorer open the builddrive
+2. clone the UDK2018-MinnowBoard project --recursively
+  
+  a) right click to open the context menu -> Git clone
 
-3. right click to open the context menu -> Git clone
+  	![cloneimage2](clonedest.png)
 
-  ![cloneimage2](clonedest.png)
-
-4. download the repository
 
 5. run launch2019.bat
 
