@@ -38,6 +38,10 @@ If a DediProg is connected to the system, the BIOS is automatically updated in t
 2. before BIOS build previous *CdePkg* build and FV files has to be deleted manually (clrCdePkgBuild.bat)
 
 ## Revision History
+### 20190906/improve tool chain check
+* add IASL version check
+* add PYTHON version check
+* add NASM version check
 ### 20190901
 * add Dediprog flash update
 * [BIOS binary](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/edk2-platforms/Vlv2TbltDevicePkg/Stitch/MNW2MAX1.X64.0101.R01.1909012230.bin)

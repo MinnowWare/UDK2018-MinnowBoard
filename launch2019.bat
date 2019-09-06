@@ -33,7 +33,10 @@ rem echo %~dp0
 rem :::::::::::::::::::::::::::::::::::::::::::::
 rem ::: test GIT version ::::::::::::::::::::::::
 rem :::::::::::::::::::::::::::::::::::::::::::::
-gitverchk.exe
+gitverchk.exe -verbose
+iaslverchk.exe -verbose
+nasmverchk.exe -verbose
+pyverchk.exe -verbose
 echo ###################################################################################
 echo ###                                                                             ###
 echo ###                             -=[ VS2019 ]=-                                  ###
