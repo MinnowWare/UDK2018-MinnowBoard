@@ -1,8 +1,9 @@
 # UDK2018-Minnowboard
 ![pci1](https://minnowboard.org/wp-content/uploads/2017/10/MBTurbot-quad-core-Top-0001-171002-1-555x370.png)
+
 https://minnowboard.org/
 
-## Preface
+## Introduction
 The MinnowBoard familiy is an *open source* Personal Computer hardware originally created by a company called
 *ADI Engineering*.
 
@@ -12,11 +13,10 @@ Intel provides [binary modules](https://firmware.intel.com/projects/minnowboard-
 to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](https://github.com/tianocore/edk2.git)
 
 
-## Goal
-
-
-1. Get the MinnowBoard running with UDK2018 and VS2019.
-2. Demonstrate the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) for *Standard C Library* conform Hosted Environment for UEFI driver development
+## Intention
+1. Get the MinnowBoard running with latest released UDK2018 and latest Visual Studio VS2019 buildenvironment
+2. use OpenSSL_1_1_0-stable in the component CryptoPkg\Library\OpensslLib
+3. Demonstrate the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) for *Standard C Library* conform Hosted Environment for UEFI driver development
 
 NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
       (the startup error message of VS2017/VS2019 can be ignored)
