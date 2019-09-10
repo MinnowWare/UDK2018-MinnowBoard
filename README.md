@@ -1,4 +1,6 @@
 # UDK2018-Minnowboard
+* [Introduction]
+
 ![pci1](https://minnowboard.org/wp-content/uploads/2017/10/MBTurbot-quad-core-Top-0001-171002-1-555x370.png)
 
 https://minnowboard.org/
@@ -16,8 +18,8 @@ to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](h
 2. use OpenSSL_1_1_0-stable in the component CryptoPkg\Library\OpensslLib
 3. demonstrate the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) for *Standard C Library* conform Hosted Environment for UEFI driver development
 
-The main aspect is, to introduce the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) to the
-UEFI/Tianocore open source community.
+**The main aspect is, to introduce the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) to the
+UEFI/Tianocore open source community.**
 
 It is considered as a major improvement over traditional UEFI BIOS development, since it introduces
 * stable, precise, chipset (ACPI timer) independant C library conform [`clock()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock?view=vs-2019) for POST and UEFI Shell in millisecond resolution
