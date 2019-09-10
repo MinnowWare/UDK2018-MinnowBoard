@@ -5,15 +5,13 @@ https://minnowboard.org/
 
 ## Introduction
 The MinnowBoard familiy is an *open source* Personal Computer hardware originally created by a company called
-*ADI Engineering*.
-
-![silicom](https://github.com/MinnowWare/pictures/blob/master/silicom.png)
+*ADI Engineering*, that belongs now to [Silicom](https://www.silicom-usa.com/)
 
 Intel provides [binary modules](https://firmware.intel.com/projects/minnowboard-max) and maintains the [build environment](https://github.com/tianocore/edk2-platforms/blob/master/Platform/Intel/Vlv2TbltDevicePkg/Readme.md)
 to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](https://github.com/tianocore/edk2.git)
 
 
-## Intention
+## Goal
 1. get the MinnowBoard running with latest released UDK2018 and latest Visual Studio VS2019 buildenvironment
 2. use OpenSSL_1_1_0-stable in the component CryptoPkg\Library\OpensslLib
 3. demonstrate the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) for *Standard C Library* conform Hosted Environment for UEFI driver development
@@ -21,11 +19,11 @@ to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](h
 The main aspect is, to introduce the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) to the
 UEFI/Tianocore open source community.
 
-It is considered as a major improvement over usual UEFI BIOS development, since it introduces
+It is considered as a major improvement over traditional UEFI BIOS development, since it introduces
 * stable, precise, chipset (ACPI timer) independant C library conform [`clock()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock?view=vs-2019) for POST and UEFI Shell in millisecond resolution
-* unlimited (unbuffered) [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family
-* standard C conform format specifiers for [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family
-* satisfies all compiler intrinsic requirements with one and the same library
+* unlimited (buffer less) [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family
+* Standard C conform format specifiers for [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family
+* satisfies all C compiler intrinsic requirements with one and the same library (C++ in not supported)
 
 NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
       (the startup error message of VS2017/VS2019 can be ignored)
