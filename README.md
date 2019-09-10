@@ -1,5 +1,15 @@
 # UDK2018-Minnowboard
 ![pci1](https://minnowboard.org/wp-content/uploads/2017/10/MBTurbot-quad-core-Top-0001-171002-1-555x370.png)
+https://minnowboard.org/
+
+## Preface
+The MinnowBoard familiy is an *open source* Personal Computer hardware originally created by a company called
+*ADI Engineering*.
+
+Intel provides [binary modules](https://firmware.intel.com/projects/minnowboard-max) and maintains the [build environment](https://github.com/tianocore/edk2-platforms/blob/master/Platform/Intel/Vlv2TbltDevicePkg/Readme.md)
+to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](https://github.com/tianocore/edk2.git)
+
+
 ## Goal
 
 
