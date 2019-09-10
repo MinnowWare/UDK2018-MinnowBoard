@@ -21,9 +21,13 @@ UEFI/Tianocore open source community.
 
 It is considered as a major improvement over traditional UEFI BIOS development, since it introduces
 * stable, precise, chipset (ACPI timer) independant C library conform [`clock()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock?view=vs-2019) for POST and UEFI Shell in millisecond resolution
-* unlimited (buffer less) [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family
+* unlimited (buffer less) [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family implementation
 * Standard C conform format specifiers for [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family
-* satisfies all C compiler intrinsic requirements with one and the same library (C++ in not supported)
+* satisfies all the Microsoft C compiler intrinsic requirements with one and the same library (C++ not supported)
+* introduction of *Hosted Environment* instead of *Freestanding Environment* for POST driver
+
+This improvements shall enable UEFI and [modernFW](https://github.com/intel/ModernFW#modernfw-project)
+to provide a Standard C interface for any "C"-(open)source-based extention.
 
 NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
       (the startup error message of VS2017/VS2019 can be ignored)
