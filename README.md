@@ -40,7 +40,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
       (the startup error message of VS2017/VS2019 can be ignored)
 
 ## HowTo/install/build
-1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC
+1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC#howto-setup-an-uefi-development-pc
 
 2. clone the UDK2018-MinnowBoard project `--recursive`ly<br>
 	i.  git.exe clone --progress --recursive -v "https://github.com/MinnowWare/UDK2018-MinnowBoard.git" "A:\UDK2018-MinnowBoard"<br>
