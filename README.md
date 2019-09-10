@@ -26,7 +26,7 @@ to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](h
 **The main aspect is, to introduce the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) to the
 UEFI/Tianocore open source community.**
 
-It is considered as a major improvement over traditional UEFI BIOS development, since it introduces
+It is considered as a improvement over traditional UEFI BIOS development, since it introduces
 * stable, precise, chipset (ACPI timer) independant C library conform [`clock()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock?view=vs-2019) for POST and UEFI Shell in millisecond resolution
 * unlimited (buffer less) [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family implementation
 * Standard C conform format specifiers for [`printf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=vs-2019)-family and [`scanf()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l?view=vs-2019)-family
