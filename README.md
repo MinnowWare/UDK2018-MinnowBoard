@@ -47,7 +47,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 ### Installation
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC#howto-setup-an-uefi-development-pc
 
-2. clone the UDK2018-MinnowBoard project `--recursive`ly<br>
+2. clone the UDK2018-MinnowBoard project `--recursive`<br>
 	i.  git.exe clone --progress --recursive -v "https://github.com/MinnowWare/UDK2018-MinnowBoard.git" "A:\UDK2018-MinnowBoard"<br>
 	or<br>
 	ii. right click to open the context menu -> Git clone<br>
