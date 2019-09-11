@@ -70,7 +70,9 @@ If a DediProg is connected to the system, the BIOS is automatically updated in t
       same command box.**
 
 ### Edit
-UDK2018-MinnowBoard is the Git-*Superproject* to build the MinnowBoard UEFI BIOS
+UDK2018-MinnowBoard is the Git-[*Superproject*](https://github.com/MinnowWare/UDK2018-MinnowBoard) to build the MinnowBoard UEFI BIOS.
+
+It includes the *edk2* which is the Git-[Subproject](https://github.com/MinnowWare/edk2-vUDK2018).
 
 
 
