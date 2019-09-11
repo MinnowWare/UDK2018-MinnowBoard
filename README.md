@@ -1,7 +1,10 @@
 # UDK2018-Minnowboard
 * [Introduction](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#introduction)
 * [Goal](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#goal)
-* [HowTo/install/build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#howtoinstallbuild)
+* [HowTo/install/build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#howtoinstallbuildedit)
+	* [Installation](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#installation)
+	* [Build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#build)
+	* [Edit](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#edit)
 * [Known Bugs](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#known-bugs)
 * [Revision History](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#revision-history)
 
@@ -17,6 +20,7 @@ The MinnowBoard familiy is an *open source* Personal Computer hardware originall
 Intel provides [binary modules](https://firmware.intel.com/projects/minnowboard-max) and maintains the [build environment](https://github.com/tianocore/edk2-platforms/blob/master/Platform/Intel/Vlv2TbltDevicePkg/Readme.md)
 to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](https://github.com/tianocore/edk2.git)
 
+UDK2018-MinnowBoard is the Git-*Superproject* to build the MinnowBoard UEFI BIOS
 
 ## Goal
 1. get the MinnowBoard running with latest released UDK2018 and latest Visual Studio VS2019 buildenvironment
@@ -39,7 +43,8 @@ to provide a Standard C interface for any "C"-(open)source-based extention.
 NOTE: Visual Studio is here only used for editing the project. The build process is still pure EDK!
       (the startup error message of VS2017/VS2019 can be ignored)
 
-## HowTo/install/build
+## HowTo/install/build/Edit
+### Installation
 1. install a build machine according to https://github.com/MinnowWare/HowTo-setup-an-UEFI-Development-PC#howto-setup-an-uefi-development-pc
 
 2. clone the UDK2018-MinnowBoard project `--recursive`ly<br>
@@ -48,6 +53,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 	ii. right click to open the context menu -> Git clone<br>
 ![cloneimage2](clonedest.png)
 
+### Build
 3. To build the EDK emulation:<br>
 `edk2\launch2019.bat` to setup EDK2 / emulation (Nt32Pkg) build environment<br>
 `rd /s /q build` in the `edk2`directory to clean previous EDK2 / emulation build<br>
@@ -62,6 +68,11 @@ If a DediProg is connected to the system, the BIOS is automatically updated in t
 
 **NOTE: EDKEmulation build and MinnowBoard build CAN NOT be used alternating in the
       same command box.**
+
+### Edit
+UDK2018-MinnowBoard is the Git-*Superproject* to build the MinnowBoard UEFI BIOS
+
+
 
 ## Known Bugs
 1. fixed 20190830: <del>*Capsule* doesn't work.</del>
