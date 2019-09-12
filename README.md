@@ -52,6 +52,11 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 	or<br>
 	ii. right click to open the context menu -> Git clone<br>
 ![cloneimage2](clonedest.png)
+### directory structure
+The given MinnowBoard SourceCode tree is extended by files and directories shown below:
+
+![dirarch](https://github.com/MinnowWare/pictures/blob/master/directory.png)
+
 
 ### Build
 3. To build the EDK emulation:<br>
@@ -70,9 +75,12 @@ If a DediProg is connected to the system, the BIOS is automatically updated in t
       same command box.**
 
 ### Edit
-UDK2018-MinnowBoard is the Git-[*Superproject*](https://github.com/MinnowWare/UDK2018-MinnowBoard) to build the MinnowBoard UEFI BIOS.
 
-It includes the *edk2* which is the Git-[Subproject](https://github.com/MinnowWare/edk2-vUDK2018).
+UDK2018-MinnowBoard is the Git-[Superproject **UDK2018-MinnowBoard**](https://github.com/MinnowWare/UDK2018-MinnowBoard) to build the MinnowBoard UEFI BIOS.
+
+It includes the *edk2* which is the Git-[Subproject **edk2-vUDK2018**](https://github.com/MinnowWare/edk2-vUDK2018), that in turn
+includes the *Cde*-directories as GIT-[Subproject **CdePkg**](https://github.com/MinnowWare/CdePkg) and 
+GIT-[Subproject **CdeValidationPkg**](https://github.com/MinnowWare/CdeValidationPkg).
 
 
 
