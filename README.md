@@ -1,8 +1,9 @@
-# UDK2018-Minnowboard
+# UDK2018-Minnowboard / CdePkg
 * [Introduction](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#introduction)
 * [Goal](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#goal)
 * [HowTo/install/build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#howtoinstallbuildedit)
 	* [Installation](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#installation)
+	* [Directory structure](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#directory-structure)
 	* [Build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#build)
 	* [Edit](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#edit)
 * [Known Bugs](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#known-bugs)
@@ -23,12 +24,13 @@ to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](h
 UDK2018-MinnowBoard is the Git-*Superproject* to build the MinnowBoard UEFI BIOS
 
 ## Goal
-1. get the MinnowBoard running with latest released UDK2018 and latest Visual Studio VS2019 buildenvironment
-2. use OpenSSL_1_1_0-stable in the component CryptoPkg\Library\OpensslLib
-3. demonstrate the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) for *Standard C Library* conform Hosted Environment for UEFI driver development
+1. 	**The main aspect is, to introduce the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and
+	the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg)to the
+	UEFI/Tianocore open source community.**
 
-**The main aspect is, to introduce the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) to the
-UEFI/Tianocore open source community.**
+2. get the MinnowBoard and the EDK2 Emulation (Nt32Pkg) running with latest released UDK2018 and latest Visual Studio VS2019 buildenvironment
+3. use OpenSSL_1_1_0-stable in the component CryptoPkg\Library\OpensslLib
+
 
 It is considered as a improvement over traditional UEFI BIOS development, since it introduces
 * stable, precise, chipset (ACPI timer) independant C library conform [`clock()`](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock?view=vs-2019) for POST and UEFI Shell in millisecond resolution
@@ -52,7 +54,7 @@ NOTE: Visual Studio is here only used for editing the project. The build process
 	or<br>
 	ii. right click to open the context menu -> Git clone<br>
 ![cloneimage2](clonedest.png)
-### directory structure
+### Directory structure
 The given MinnowBoard SourceCode tree is extended by files and directories shown below:
 
 ![dirarch](https://github.com/MinnowWare/pictures/blob/master/directory.png)
