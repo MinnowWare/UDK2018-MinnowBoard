@@ -1,4 +1,4 @@
-# UDK2018-Minnowboard / CdePkg
+# UDK2018-Minnowboard / [CdePkg](https://github.com/MinnowWare/CdePkg#cdepkg)
 * [Introduction](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#introduction)
 * [Goal](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#goal)
 * [HowTo/install/build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#howtoinstallbuildedit)
