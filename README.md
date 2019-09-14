@@ -6,8 +6,8 @@
 	* [Directory structure](https://github.com/MinnowWare/UDK2018-MinnowBoard#directory-structure)
 	* [Build](https://github.com/MinnowWare/UDK2018-MinnowBoard#build)
 	* [Edit](https://github.com/MinnowWare/UDK2018-MinnowBoard#edit)
-* [Known Bugs](https://github.com/MinnowWare/UDK2018-MinnowBoard#known-bugs)
 * [Related Projects](https://github.com/MinnowWare/UDK2018-MinnowBoard#related-projects)
+* [Known Bugs](https://github.com/MinnowWare/UDK2018-MinnowBoard#known-bugs)
 * [Revision History](https://github.com/MinnowWare/UDK2018-MinnowBoard#revision-history)
 
 
