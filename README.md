@@ -1,13 +1,14 @@
 # UDK2018-Minnowboard / [CdePkg](https://github.com/MinnowWare/CdePkg#cdepkg)
-* [Introduction](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#introduction)
-* [Goal](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#goal)
-* [HowTo/install/build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#howtoinstallbuildedit)
-	* [Installation](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#installation)
-	* [Directory structure](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#directory-structure)
-	* [Build](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#build)
-	* [Edit](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#edit)
-* [Known Bugs](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#known-bugs)
-* [Revision History](https://github.com/MinnowWare/UDK2018-MinnowBoard/blob/master/README.md#revision-history)
+* [Introduction](https://github.com/MinnowWare/UDK2018-MinnowBoard#introduction)
+* [Goal](https://github.com/MinnowWare/UDK2018-MinnowBoard#goal)
+* [HowTo/install/build](https://github.com/MinnowWare/UDK2018-MinnowBoard#howtoinstallbuildedit)
+	* [Installation](https://github.com/MinnowWare/UDK2018-MinnowBoard#installation)
+	* [Directory structure](https://github.com/MinnowWare/UDK2018-MinnowBoard#directory-structure)
+	* [Build](https://github.com/MinnowWare/UDK2018-MinnowBoard#build)
+	* [Edit](https://github.com/MinnowWare/UDK2018-MinnowBoard#edit)
+* [Known Bugs](https://github.com/MinnowWare/UDK2018-MinnowBoard#known-bugs)
+* [Related Projects](https://github.com/MinnowWare/UDK2018-MinnowBoard#related-projects)
+* [Revision History](https://github.com/MinnowWare/UDK2018-MinnowBoard#revision-history)
 
 
 ![pci1](https://minnowboard.org/wp-content/uploads/2017/10/MBTurbot-quad-core-Top-0001-171002-1-555x370.png)
@@ -102,7 +103,17 @@ It includes the *edk2* which is the Git-[Subproject **edk2-vUDK2018**](https://g
 includes the *Cde*-directories as GIT-[Subproject **CdePkg**](https://github.com/MinnowWare/CdePkg) and 
 GIT-[Subproject **CdeValidationPkg**](https://github.com/MinnowWare/CdeValidationPkg).
 
-
+# Related Projects
+| related project|annotation|
+|:-|:-|
+|[Torito C Library](https://github.com/JoaquinConoBolillo/torito-C-Library#torito-c-library)|C Library for UEFI Shell only. All projects below are build on or derived from *Torito C Library*|
+|[Visual ANSI C for UEFI Shell](https://github.com/JoaquinConoBolillo/Visual-ANSI-C-for-UEFI-Shell#visual-ansi-c-for-uefi-shell)|Visual Studio for UEFI Shell for beginners.|
+|[Visual DOS Tools for UEFI Shell](https://github.com/JoaquinConoBolillo/Visual-DOS-Tools-for-UEFI-Shell#visual-dos-tools-for-uefi-shell)|more command implementation|
+|[Visual HWTools for UEFI Shell](https://github.com/MinnowWare/Visual-HWTools-for-UEFI-Shell#visual-hwtools-for-uefi-shell)|HWTools: PCI- and GPIOSpy for Baytrail. MemSpy for all.|
+|[UDK2018-Minnowboard](https://github.com/MinnowWare/UDK2018-MinnowBoard#udk2018-minnowboard--cdepkg)|Get the MinnowBoard running with latest released EDK sourcecode and demonstrate *CdePkg* on real hardware|
+|[edk2-UDK2018](https://github.com/MinnowWare/edk2-vUDK2018#edk2-udk2018--cdepkg)|Get the Emulation (Nt32Pkg) running with latest released EDK sourcecode and demonstrate *CdePkg* on the Windows Desktop|
+|[CdePkg](https://github.com/MinnowWare/CdePkg#cdepkg)|*Torito C Library* reworked for UEFI POST usage|
+|[CdeValidationPkg](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg)|Unit tests for *CdePkg*|
 
 ## Known Bugs
 1. fixed 20190830: <del>*Capsule* doesn't work.</del>
