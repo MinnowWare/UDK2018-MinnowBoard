@@ -13,8 +13,6 @@
 
 ![pci1](https://minnowboard.org/wp-content/uploads/2017/10/MBTurbot-quad-core-Top-0001-171002-1-555x370.png)
 
-https://minnowboard.org/
-
 ## Introduction
 The MinnowBoard familiy is an *open source* Personal Computer hardware originally created by a company called
 *ADI Engineering*, that belongs now to [Silicom](https://www.silicom-usa.com/)
@@ -22,11 +20,13 @@ The MinnowBoard familiy is an *open source* Personal Computer hardware originall
 Intel provides [binary modules](https://firmware.intel.com/projects/minnowboard-max) and maintains the [build environment](https://github.com/tianocore/edk2-platforms/blob/master/Platform/Intel/Vlv2TbltDevicePkg/Readme.md)
 to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](https://github.com/tianocore/edk2.git)
 
+The MinnowBoard is the only free available hardware/PC platform get UEFI Tianocore BIOS running.
+
 UDK2018-MinnowBoard is the Git-*Superproject* to build the MinnowBoard UEFI BIOS
 
 ## Goal
 1. 	**The main aspect is, to introduce the [**_CdePkg_**](https://github.com/MinnowWare/CdePkg#cdepkg) and
-	the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg)to the
+	the [**_CdeValidationPkg_**](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg) to the
 	UEFI/Tianocore open source community.**
 
 2. get the MinnowBoard and the EDK2 Emulation (Nt32Pkg) running with latest released UDK2018 and latest Visual Studio VS2019 buildenvironment
@@ -114,6 +114,7 @@ GIT-[Subproject **CdeValidationPkg**](https://github.com/MinnowWare/CdeValidatio
 |[edk2-UDK2018](https://github.com/MinnowWare/edk2-vUDK2018#edk2-udk2018--cdepkg)|Get the Emulation (Nt32Pkg) running with latest released EDK sourcecode and demonstrate *CdePkg* on the Windows Desktop|
 |[CdePkg](https://github.com/MinnowWare/CdePkg#cdepkg)|*Torito C Library* reworked for UEFI POST usage|
 |[CdeValidationPkg](https://github.com/MinnowWare/CdeValidationPkg#cdevalidationpkg)|Unit tests for *CdePkg*|
+|[MinnowBoard](https://minnowboard.org/)|Official MinnowBoard web presence|
 
 ## Known Bugs
 1. fixed 20190830: <del>*Capsule* doesn't work.</del>
