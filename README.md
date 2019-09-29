@@ -13,7 +13,19 @@
 
 ![pci1](https://minnowboard.org/wp-content/uploads/2017/10/MBTurbot-quad-core-Top-0001-171002-1-555x370.png)
 
-## Introduction
+https://minnowboard.org/
+
+## Introduction **UDK2018-Minnowboard**
+**This **UDK2018-Minnowboard** introduces the [**_CdePkg_**](https://github.com/KilianKegel/CdePkg#cdepkg) and
+the [**_CdeValidationPkg_**](https://github.com/KilianKegel/CdeValidationPkg#cdevalidationpkg) to the
+UEFI/Tianocore open source community.**
+
+**UDK2018-Minnowboard** is the Git-*Super-Project* in the [UDK2018-MinnowBoard](https://github.com/KilianKegel/UDK2018-MinnowBoard) project to build the MinnowBoard UEFI BIOS.
+It contains the [**edk2-vUDK2018**](https://github.com/KilianKegel/edk2-vUDK2018) as a Git-*Sub-Project*.
+[**edk2-vUDK2018**](https://github.com/KilianKegel/edk2-vUDK2018) can also be used stand alone in Emulation Mode (Nt32Pkg)
+(NOTE: In emulation mode timing calulation assumes to run a 1GHz platform).
+
+
 The MinnowBoard familiy is an *open source* Personal Computer hardware originally created by a company called
 *ADI Engineering*, that now belongs to [Silicom](https://www.silicom-usa.com/)
 
@@ -22,7 +34,9 @@ to get the MinnowBoard running with the open source [UEFI BIOS Tianocore\EDK2](h
 
 The MinnowBoard is the only free available hardware/PC platform to get UEFI Tianocore BIOS running.
 
-UDK2018-MinnowBoard is the Git-*Superproject* to build the MinnowBoard UEFI BIOS
+**UDK2018-MinnowBoard** is the Git-*Super-Project* to build the MinnowBoard UEFI BIOS and demonstrates
+[**_CdePkg_**](https://github.com/KilianKegel/CdePkg#cdepkg) and [**_CdeValidationPkg_**](https://github.com/KilianKegel/CdeValidationPkg#cdevalidationpkg)
+on real hardware.
 
 ## Goal
 1. 	**The main aspect is, to introduce the [**_CdePkg_**](https://github.com/KilianKegel/CdePkg#cdepkg) and
